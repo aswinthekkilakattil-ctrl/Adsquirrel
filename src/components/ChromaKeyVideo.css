@@ -1,0 +1,23 @@
+.chroma-video-container {
+  position: absolute;
+  bottom: 0px;
+  right: -20px;
+  width: 65vw;
+  max-width: 1000px;
+  height: 95vh;
+  z-index: 5;
+  pointer-events: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  opacity: 1;
+}
+
+.chroma-video-canvas {
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 40px rgba(147, 51, 234, 0.35));
+}
+

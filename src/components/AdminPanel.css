@@ -1,0 +1,187 @@
+.admin-panel-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(192, 132, 252, 0.22), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(167, 139, 250, 0.16), transparent 30%),
+    linear-gradient(180deg, #09090f 0%, #111827 100%);
+}
+
+.admin-panel {
+  width: min(1220px, calc(100vw - 40px));
+  min-height: 100vh;
+  margin: 0 auto;
+  background: rgba(15, 23, 42, 0.95);
+  color: #fff;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+}
+
+.admin-panel--page {
+  position: relative;
+}
+
+.admin-panel__inner {
+  padding: 32px 24px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.admin-panel__header,
+.admin-panel__actions,
+.admin-panel__row,
+.admin-panel__field-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.admin-panel__header h3,
+.admin-panel__section h4,
+.admin-panel__section-card h5,
+.admin-panel__field-head h5 {
+  margin: 0;
+}
+
+.admin-panel__header h3 {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  letter-spacing: -0.04em;
+}
+
+.admin-panel__close,
+.admin-panel__button {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.admin-panel__button--primary {
+  background: linear-gradient(135deg, #9333ea, #c084fc);
+  color: #1f1147;
+  border: none;
+}
+
+.admin-panel__button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.admin-panel__section,
+.admin-panel__section-card,
+.admin-panel__nested-card,
+.admin-panel__array-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 16px;
+}
+
+.admin-panel__section,
+.admin-panel__section-card,
+.admin-panel__nested,
+.admin-panel__field,
+.admin-panel__array,
+.admin-panel__array-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.admin-panel__section--login {
+  max-width: 420px;
+}
+
+.admin-panel__section-card--featured {
+  border-color: rgba(192, 132, 252, 0.35);
+  background: linear-gradient(180deg, rgba(147, 51, 234, 0.12), rgba(255, 255, 255, 0.04));
+}
+
+.admin-panel__sections-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.admin-panel__label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.admin-panel__input {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.72);
+  color: #fff;
+  padding: 12px 14px;
+  outline: none;
+}
+
+.admin-panel__input--textarea {
+  min-height: 120px;
+  resize: vertical;
+  font-family: inherit;
+  line-height: 1.5;
+}
+
+.admin-panel__input--meta {
+  min-height: 140px;
+}
+
+.admin-panel__hint,
+.admin-panel__status,
+.admin-panel__item-title {
+  margin: 0;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.admin-panel__status--error {
+  color: #fca5a5;
+}
+
+.admin-panel__status--success {
+  color: #86efac;
+}
+
+.admin-panel__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 980px) {
+  .admin-panel__sections-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .admin-panel {
+    width: 100%;
+  }
+
+  .admin-panel__inner {
+    padding: 24px 16px 32px;
+  }
+
+  .admin-panel__header,
+  .admin-panel__actions,
+  .admin-panel__row,
+  .admin-panel__field-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
