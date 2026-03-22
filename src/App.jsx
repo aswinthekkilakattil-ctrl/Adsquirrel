@@ -777,6 +777,26 @@ function App() {
     applySeo(content.seo)
   }, [content])
 
+  useEffect(() => {
+    if (isCpannelRoute) return
+
+    window.history.scrollRestoration = 'manual'
+    const nextUrl = `${window.location.pathname}${window.location.search}`
+    if (window.location.hash) {
+      window.history.replaceState(null, '', nextUrl)
+    }
+
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+
+    requestAnimationFrame(() => {
+      document.getElementById('hero')?.scrollIntoView({ block: 'start' })
+    })
+
+    return () => {
+      window.history.scrollRestoration = 'auto'
+    }
+  }, [isCpannelRoute])
+
   const saveContent = async (nextContent) => {
     await set(dbRef(database, 'siteContent'), nextContent)
     setContent(nextContent)
