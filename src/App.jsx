@@ -756,7 +756,7 @@ function FloatingWhatsAppButton() {
 function App() {
   const [content, setContent] = useState(cloneDefaultContent())
   const [adminUser, setAdminUser] = useState(null)
-  const isCpannelRoute = window.location.pathname === '/cpannel'
+  const isCpanelRoute = window.location.pathname === '/cpanel'
 
   useEffect(() => {
     const contentRef = dbRef(database, 'siteContent')
@@ -778,7 +778,7 @@ function App() {
   }, [content])
 
   useEffect(() => {
-    if (isCpannelRoute) return
+    if (isCpanelRoute) return
 
     window.history.scrollRestoration = 'manual'
     const nextUrl = `${window.location.pathname}${window.location.search}`
@@ -795,7 +795,7 @@ function App() {
     return () => {
       window.history.scrollRestoration = 'auto'
     }
-  }, [isCpannelRoute])
+  }, [isCpanelRoute])
 
   const saveContent = async (nextContent) => {
     await set(dbRef(database, 'siteContent'), nextContent)
@@ -808,7 +808,7 @@ function App() {
     return resetValue
   }
 
-  if (isCpannelRoute) {
+  if (isCpanelRoute) {
     return (
       <Suspense fallback={<div className="admin-panel-loading">Loading admin panel...</div>}>
         <AdminPanel

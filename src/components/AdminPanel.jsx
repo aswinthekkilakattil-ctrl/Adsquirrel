@@ -242,7 +242,7 @@ export default function AdminPanel({
         <div className="admin-panel__inner">
           <div className="admin-panel__header">
             <div>
-              <h3>CPannel</h3>
+              <h3>CPanel</h3>
               <p className="admin-panel__hint">Change every section of the website using simple form fields.</p>
             </div>
             <a className="admin-panel__close" href="/">
