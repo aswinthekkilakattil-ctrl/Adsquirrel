@@ -1702,7 +1702,7 @@
     height: auto !important; 
     max-width: none !important;
     bottom: -15px !important; /* Pull it down so squirrel sits flush */
-    right: -25px !important; /* Push right edge inward */
+    right: 5px !important; /* Shift video a little left in mobile view */
     margin: 0 !important;
     opacity: 1 !important;
     z-index: 999 !important; /* Force to top layer */
