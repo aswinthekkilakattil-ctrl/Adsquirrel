@@ -14,7 +14,7 @@
     aboutLabel: 'About',
     resultsLabel: 'Results',
     reviewsLabel: 'Reviews',
-    ctaLabel: 'Go Nuts!',
+    ctaLabel: 'Get Started',
   },
   hero: {
     badge: 'Nexston',
@@ -146,7 +146,7 @@
     emailPlaceholder: 'Your Email',
     companyPlaceholder: 'Company Name',
     messagePlaceholder: 'Tell us about your wildest marketing dreams...',
-    submitLabel: "Let's Go Nuts Together!",
+    submitLabel: 'Send Your Enquiry',
     successMessage: "Message sent successfully. We'll get back to you soon.",
   },
   footer: {

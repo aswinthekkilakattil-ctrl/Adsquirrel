@@ -48,6 +48,14 @@ function normalizeContent(content) {
     mergedContent.testimonials.items = cloneDefaultContent().testimonials.items
   }
 
+  if (mergedContent.contact?.submitLabel === "Let's Go Nuts Together!") {
+    mergedContent.contact.submitLabel = 'Send Your Enquiry'
+  }
+
+  if (mergedContent.nav?.ctaLabel === 'Go Nuts!') {
+    mergedContent.nav.ctaLabel = 'Get Started'
+  }
+
   return mergedContent
 }
 
