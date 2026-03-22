@@ -1,6 +1,6 @@
 .chroma-video-container {
   position: absolute;
-  bottom: 0px;
+  bottom: 24px;
   right: -20px;
   width: 65vw;
   max-width: 1000px;
@@ -20,4 +20,3 @@
   object-fit: contain;
   filter: drop-shadow(0 20px 40px rgba(147, 51, 234, 0.35));
 }
-

@@ -2,9 +2,11 @@
 import { onValue, ref as dbRef, set } from 'firebase/database'
 import './App.css'
 import ChromaKeyVideo from './components/ChromaKeyVideo.jsx'
-import AdminPanel from './components/AdminPanel.jsx'
 import { database } from './firebase.js'
 import { defaultSiteContent } from './siteContent.js'
+import { Suspense, lazy } from 'react'
+
+const AdminPanel = lazy(() => import('./components/AdminPanel.jsx'))
 
 const CONTACT_FORM_CREDENTIALS = {
   serviceId: 'service_mtz6ebh',
@@ -251,6 +253,7 @@ function HeroSection({ hero }) {
   useEffect(() => {
     const timeout = setTimeout(() => setLoaded(true), 300)
     const handleResize = () => setIsMobile(window.innerWidth <= 768)
+
     window.addEventListener('resize', handleResize)
 
     return () => {
@@ -735,11 +738,7 @@ function FloatingWhatsAppButton() {
       >
         <path
           fill="currentColor"
-          d="M19.11 17.19c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.8-1.67-2.1-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.21-.24-.58-.48-.5-.67-.5h-.57c-.2 0-.52.08-.8.37-.27.3-1.05 1.02-1.05 2.5 0 1.47 1.08 2.9 1.22 3.1.15.2 2.12 3.24 5.13 4.54.72.31 1.29.5 1.73.64.73.23 1.39.2 1.91.12.58-.09 1.76-.72 2-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"
-        />
-        <path
-          fill="currentColor"
-          d="M16.02 3.2c-7 0-12.68 5.67-12.68 12.67 0 2.23.58 4.42 1.68 6.34L3.2 28.8l6.76-1.77a12.7 12.7 0 0 0 6.06 1.54h.01c7 0 12.67-5.68 12.67-12.68 0-3.39-1.32-6.57-3.71-8.96A12.57 12.57 0 0 0 16.02 3.2Zm0 23.2h-.01a10.5 10.5 0 0 1-5.35-1.47l-.39-.23-4.01 1.05 1.07-3.91-.25-.4a10.49 10.49 0 0 1-1.61-5.59c0-5.8 4.72-10.52 10.54-10.52 2.8 0 5.44 1.09 7.42 3.08a10.4 10.4 0 0 1 3.09 7.43c0 5.81-4.73 10.54-10.5 10.54Z"
+          d="M16.01 4.8c-6.19 0-11.2 5-11.2 11.18 0 1.98.52 3.92 1.49 5.62L4.8 27.2l5.77-1.5a11.18 11.18 0 0 0 5.43 1.39c6.17 0 11.2-5.01 11.2-11.18 0-2.97-1.16-5.77-3.27-7.88A11.08 11.08 0 0 0 16.01 4.8Zm0 20.39h-.01c-1.75 0-3.46-.47-4.95-1.35l-.35-.21-3.42.89.91-3.34-.22-.34a9.26 9.26 0 0 1-1.5-5.03c0-5.13 4.2-9.32 9.36-9.32 2.49 0 4.82.97 6.58 2.73a9.24 9.24 0 0 1 2.74 6.59c0 5.14-4.19 9.38-9.14 9.38Zm5.13-6.99c-.28-.14-1.65-.81-1.91-.9-.25-.09-.44-.14-.62.15-.18.27-.72.89-.88 1.08-.16.18-.32.2-.59.07-.28-.14-1.16-.43-2.22-1.37-.82-.73-1.38-1.63-1.55-1.91-.16-.27-.02-.42.12-.56.12-.12.27-.3.4-.45.13-.16.18-.27.28-.46.09-.18.05-.34-.02-.48-.07-.14-.62-1.5-.85-2.05-.22-.53-.45-.46-.62-.46h-.53c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.3 0 1.37 1 2.69 1.12 2.88.14.18 1.95 2.97 4.73 4.16.66.29 1.19.46 1.59.59.67.21 1.28.18 1.76.11.53-.08 1.62-.66 1.85-1.3.23-.64.23-1.18.16-1.3-.07-.11-.25-.18-.53-.32Z"
         />
       </svg>
     </a>
@@ -783,14 +782,16 @@ function App() {
 
   if (isCpannelRoute) {
     return (
-      <AdminPanel
-        content={content}
-        onSave={saveContent}
-        onReset={resetContent}
-        isAuthenticated={Boolean(adminUser)}
-        onLogin={setAdminUser}
-        onLogout={() => setAdminUser(null)}
-      />
+      <Suspense fallback={<div className="admin-panel-loading">Loading admin panel...</div>}>
+        <AdminPanel
+          content={content}
+          onSave={saveContent}
+          onReset={resetContent}
+          isAuthenticated={Boolean(adminUser)}
+          onLogin={setAdminUser}
+          onLogout={() => setAdminUser(null)}
+        />
+      </Suspense>
     )
   }
 

@@ -108,6 +108,7 @@ export default function ChromaKeyVideo({
         playsInline
         loop
         autoPlay
+        preload="metadata"
         crossOrigin="anonymous"
       />
       <canvas ref={canvasRef} className="chroma-video-canvas" />
