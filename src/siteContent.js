@@ -21,9 +21,9 @@
     titleLine1: "We Don't Just",
     titleGradient: 'Market.',
     titleLine3Prefix: 'We Go',
-    titleBounce: 'NUTS!',
+    titleBounce: 'Nuts.',
     subtitle:
-      "AdSquirrel is a results-driven marketing agency that unlocks digital growth. We bring viral campaigns, insane creativity, and results that'll make you do a backflip.",
+      'AdSquirrel is a results-driven marketing agency that unlocks digital growth through standout creative, focused campaigns, and measurable results.',
     primaryCta: 'Start Your Campaign',
     secondaryCta: 'Read Love Letters',
     stats: [
@@ -44,15 +44,15 @@
   ],
   services: {
     badge: 'What We Do',
-    title: 'Services That Go',
-    gradientWord: 'Beyond Nuts',
+    title: 'From Being Seen to Being',
+    gradientWord: 'Chosen',
     subtitle:
       "We don't just offer marketing. We offer transformation. Each service is designed to take your brand from good to legendary.",
     items: [
       {
         icon: '\uD83C\uDFAF',
         title: 'Precision Targeting',
-        desc: 'We find your audience like a squirrel finds nuts, with laser focus and pure instinct.',
+        desc: 'We identify and reach your ideal audience with clear insights, focused targeting, and measurable intent.',
         color: '#c084fc',
       },
       {
@@ -69,8 +69,8 @@
       },
       {
         icon: '\uD83D\uDCC8',
-        title: 'Growth Hacking',
-        desc: 'Unconventional strategies that multiply your growth exponentially.',
+        title: 'AEO Services',
+        desc: 'We optimize your content and website for AI-powered search and answer engines, helping your brand get discovered in the moments that matter.',
         color: '#a3e635',
       },
       {
@@ -82,8 +82,33 @@
       {
         icon: '\uD83D\uDD0D',
         title: 'SEO Mastery',
-        desc: 'We climb search rankings like squirrels climb trees, fast and all the way to the top.',
+        desc: 'We build sustainable search visibility with thoughtful technical, content, and keyword strategies.',
         color: '#fb923c',
+      },
+    ],
+  },
+  aeo: {
+    badge: 'Answer Engine Optimization',
+    title: 'Be Found in',
+    gradientWord: 'AI Answers',
+    description:
+      'Answer Engine Optimization helps businesses become easier to understand and recommend across AI-powered search and answer experiences.',
+    items: [
+      {
+        title: 'What AEO Is',
+        text: 'AEO makes your expertise, services, and company information clear, useful, and easy for answer engines to interpret.',
+      },
+      {
+        title: 'AEO + SEO',
+        text: 'AEO complements SEO by strengthening the content and technical foundations that help people find you in traditional and AI-led search.',
+      },
+      {
+        title: 'What We Optimize',
+        text: 'We improve service pages, question-led content, website structure, and business information so your answers are specific and trustworthy.',
+      },
+      {
+        title: 'How We Measure',
+        text: 'We track search visibility, qualified traffic, engagement, rankings, and the performance of the content that supports your growth goals.',
       },
     ],
   },
@@ -92,13 +117,13 @@
     title: 'Born to Be',
     gradientWord: 'Wild',
     descriptionOne:
-      'AdSquirrel was founded by a bunch of marketing maniacs who believed that advertising should be fun, fearless, and freaking effective.',
+      'AdSquirrel was founded by marketing specialists who believe advertising should be creative, strategic, and effective.',
     descriptionTwo:
-      "We're not your typical buttoned-up agency. We're the ones who bring confetti cannons to brainstorming sessions and turn Monday meetings into creative explosions.",
+      'We combine sharp strategy, strong creative thinking, and practical execution to help brands grow with confidence.',
     awardBadge: '\uD83C\uDFC6 Award Winning',
     passionBadge: '\uD83D\uDC96 100% Passion',
     features: [
-      { icon: '\u26A1', title: 'Lightning Fast', text: 'Campaigns launched at squirrel speed' },
+      { icon: '\u26A1', title: 'Fast Moving', text: 'Campaigns launched with speed and focus' },
       { icon: '\uD83E\uDDE0', title: 'Big Brain Energy', text: 'Data-driven strategies that actually work' },
       { icon: '\uD83C\uDFAA', title: 'Wildly Creative', text: 'Ideas so fresh they should be refrigerated' },
     ],
@@ -137,15 +162,62 @@
       },
     ],
   },
+  faq: {
+    badge: 'Frequently Asked Questions',
+    title: 'Questions,',
+    gradientWord: 'Answered',
+    items: [
+      {
+        question: 'What marketing services do you offer?',
+        answer:
+          'We offer a range of digital marketing services, including social media marketing, SEO, Google Ads, Meta Ads, content marketing, branding, website development, and performance marketing.',
+      },
+      {
+        question: 'How do I know which marketing service my business needs?',
+        answer:
+          'We first understand your business, current online presence, target audience, and goals. Based on this, we recommend the channels and strategies most likely to deliver results.',
+      },
+      {
+        question: 'How long does it take to see results?',
+        answer:
+          'It depends on the service and your goals. Paid advertising can generate results relatively quickly, while SEO, content, and organic social media typically require consistent effort over a longer period.',
+      },
+      {
+        question: 'Do you provide SEO services?',
+        answer:
+          'Yes. Our SEO approach can include keyword research, on-page optimization, technical SEO, content strategy, local SEO, and performance monitoring.',
+      },
+      {
+        question: 'Do you provide AEO (Answer Engine Optimization) services?',
+        answer:
+          'Yes. We help businesses improve their visibility across AI-powered search and answer engines by optimizing their content, website structure, and digital presence for emerging search behaviors.',
+      },
+      {
+        question: 'What is Answer Engine Optimization (AEO)?',
+        answer:
+          'Answer Engine Optimization is the practice of making your content, services, and company information easier for AI-powered search and answer engines to understand and surface when people ask relevant questions.',
+      },
+      {
+        question: 'What is the difference between AEO and SEO?',
+        answer:
+          'SEO helps improve visibility in search results, while AEO focuses on making information clear, well-structured, and useful in answer-based and AI-powered search experiences. A strong strategy uses both together.',
+      },
+      {
+        question: 'How do you measure AEO progress?',
+        answer:
+          'We monitor organic visibility, rankings for relevant questions, qualified traffic, engagement, conversions, and the performance of the content and technical improvements that support discovery.',
+      },
+    ],
+  },
   contact: {
-    title: 'Ready to Go',
-    gradientWord: 'Absolutely Nuts?',
+    title: 'Ready to Grow',
+    gradientWord: 'Your Brand?',
     subtitle:
-      "Drop us a message and let's turn your brand into the next big thing. No boring meetings, we promise.",
+      "Send us a message and let's turn your marketing goals into measurable growth.",
     namePlaceholder: 'Your Name',
     emailPlaceholder: 'Your Email',
     companyPlaceholder: 'Company Name',
-    messagePlaceholder: 'Tell us about your wildest marketing dreams...',
+    messagePlaceholder: 'Tell us about your marketing goals...',
     submitLabel: 'Send Your Enquiry',
     successMessage: "Message sent successfully. We'll get back to you soon.",
   },
@@ -153,20 +225,25 @@
     companyName: 'Nexston Corporations Pvt Ltd',
     description:
       'Nexston Corporations Pvt Ltd delivers enterprise software solutions, digital engineering services, and industry-aligned skilling programs focused on practical, real-world learning.',
-    officeHeading: 'Corporate Office',
+    officeHeading: 'Registered Offices',
     officeLines: [
-      'No. 4/61, 2nd Floor, Suite #697,',
+      '1st Floor, Kinfra Hi-Tech Park,',
+      'Kalamassery, Kerala - 683503',
+      'No. 4/461, 2nd Floor, Suite #697,',
       'Valamkottil Towers, Judgemukku,',
       'Kakkanad, Kochi - 682021',
     ],
     connectHeading: 'Connect With Us',
     socialLinks: [
-      { label: 'WhatsApp', icon: 'WA', href: '#' },
       { label: 'Instagram', icon: 'IG', href: 'https://www.instagram.com/ad.squirrel' },
-      { label: 'Gmail', icon: 'M', href: 'mailto:adsquirrelbynexston@gmail.com' },
+      { label: 'Facebook', icon: 'f', href: 'https://www.facebook.com/' },
+      { label: 'X', icon: 'X', href: 'https://x.com/' },
+      { label: 'LinkedIn', icon: 'in', href: 'https://www.linkedin.com/' },
     ],
-    email: 'adsquirrelbynexston@gmail.com',
-    phone: '+91 8301981869',
+    email: 'support@nexston.in',
+    phone: '+91 9846730362',
+    verificationLabel: 'Verify Certificate',
+    verificationHref: '#',
     copyright: '© 2026 Nexston Corporations Pvt Ltd. All rights reserved.',
   },
 }

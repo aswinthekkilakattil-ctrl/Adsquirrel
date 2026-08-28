@@ -22,8 +22,16 @@ function cloneDefaultContent() {
 function normalizeContent(content) {
   const nextContent = cloneDefaultContent()
   const mergedContent = mergeWithDefaults(nextContent, content)
-  const oldHeroSubtitle = "AdSquirrel is the wildest marketing agency that cracks the nut of digital growth. We bring viral campaigns, insane creativity, and results that'll make you do a backflip."
-  const updatedHeroSubtitle = "AdSquirrel is a results-driven marketing agency that unlocks digital growth. We bring viral campaigns, insane creativity, and results that'll make you do a backflip."
+  const legacyCopy = {
+    originalHeroSubtitle: "AdSquirrel is the wildest marketing agency that cracks the nut of digital growth. We bring viral campaigns, insane creativity, and results that'll make you do a backflip.",
+    heroSubtitle: "AdSquirrel is a results-driven marketing agency that unlocks digital growth. We bring viral campaigns, insane creativity, and results that'll make you do a backflip.",
+    targetingDescription: 'We find your audience like a squirrel finds nuts, with laser focus and pure instinct.',
+    seoDescription: 'We climb search rankings like squirrels climb trees, fast and all the way to the top.',
+    aboutDescriptionOne: 'AdSquirrel was founded by a bunch of marketing maniacs who believed that advertising should be fun, fearless, and freaking effective.',
+    aboutDescriptionTwo: "We're not your typical buttoned-up agency. We're the ones who bring confetti cannons to brainstorming sessions and turn Monday meetings into creative explosions.",
+    contactSubtitle: "Drop us a message and let's turn your brand into the next big thing. No boring meetings, we promise.",
+    messagePlaceholder: 'Tell us about your wildest marketing dreams...',
+  }
   const oldTestimonialAuthors = ['Sarah Chen', 'Marcus Johnson', 'Priya Patel']
 
   if (
@@ -33,12 +41,55 @@ function normalizeContent(content) {
     mergedContent.hero.badge = 'Nexston'
   }
 
-  if (mergedContent.hero?.subtitle === oldHeroSubtitle) {
-    mergedContent.hero.subtitle = updatedHeroSubtitle
+  if (mergedContent.hero?.titleBounce === 'NUTS!' || mergedContent.hero?.titleBounce === 'Further.') {
+    mergedContent.hero.titleBounce = 'Nuts.'
+  }
+
+  if (
+    mergedContent.hero?.subtitle === legacyCopy.originalHeroSubtitle ||
+    mergedContent.hero?.subtitle === legacyCopy.heroSubtitle
+  ) {
+    mergedContent.hero.subtitle = nextContent.hero.subtitle
   }
 
   if (mergedContent.testimonials?.gradientWord === 'Nutty Clients') {
     mergedContent.testimonials.gradientWord = 'Clients'
+  }
+
+  if (
+    mergedContent.services?.title === 'Services That Go' &&
+    (mergedContent.services?.gradientWord === 'Beyond Nuts' || mergedContent.services?.gradientWord === 'Further')
+  ) {
+    mergedContent.services.title = nextContent.services.title
+    mergedContent.services.gradientWord = nextContent.services.gradientWord
+  }
+
+  if (mergedContent.services?.items?.[0]?.desc === legacyCopy.targetingDescription) {
+    mergedContent.services.items[0].desc = nextContent.services.items[0].desc
+  }
+
+  if (mergedContent.services?.items?.[5]?.desc === legacyCopy.seoDescription) {
+    mergedContent.services.items[5].desc = nextContent.services.items[5].desc
+  }
+
+  if (mergedContent.services?.items?.[3]?.title === 'Growth Hacking') {
+    mergedContent.services.items[3].title = 'AEO Services'
+  }
+
+  if (mergedContent.services?.items?.[3]?.desc === 'Unconventional strategies that multiply your growth exponentially.') {
+    mergedContent.services.items[3].desc = nextContent.services.items[3].desc
+  }
+
+  if (mergedContent.about?.descriptionOne === legacyCopy.aboutDescriptionOne) {
+    mergedContent.about.descriptionOne = nextContent.about.descriptionOne
+  }
+
+  if (mergedContent.about?.descriptionTwo === legacyCopy.aboutDescriptionTwo) {
+    mergedContent.about.descriptionTwo = nextContent.about.descriptionTwo
+  }
+
+  if (mergedContent.about?.features?.[0]?.text === 'Campaigns launched at squirrel speed') {
+    mergedContent.about.features[0] = nextContent.about.features[0]
   }
 
   if (
@@ -50,6 +101,51 @@ function normalizeContent(content) {
 
   if (mergedContent.contact?.submitLabel === "Let's Go Nuts Together!") {
     mergedContent.contact.submitLabel = 'Send Your Enquiry'
+  }
+
+  if (mergedContent.contact?.title === 'Ready to Go') {
+    mergedContent.contact.title = 'Ready to Grow'
+  }
+
+  if (mergedContent.contact?.gradientWord === 'Absolutely Nuts?') {
+    mergedContent.contact.gradientWord = 'Your Brand?'
+  }
+
+  if (mergedContent.contact?.subtitle === legacyCopy.contactSubtitle) {
+    mergedContent.contact.subtitle = nextContent.contact.subtitle
+  }
+
+  if (mergedContent.contact?.messagePlaceholder === legacyCopy.messagePlaceholder) {
+    mergedContent.contact.messagePlaceholder = nextContent.contact.messagePlaceholder
+  }
+
+  const oldOfficeLines = [
+    'No. 4/61, 2nd Floor, Suite #697,',
+    'Valamkottil Towers, Judgemukku,',
+    'Kakkanad, Kochi - 682021',
+  ]
+
+  if (
+    Array.isArray(mergedContent.footer?.officeLines) &&
+    mergedContent.footer.officeLines.join('|') === oldOfficeLines.join('|')
+  ) {
+    mergedContent.footer.officeLines = nextContent.footer.officeLines
+  }
+
+  if (mergedContent.footer?.email === 'adsquirrelbynexston@gmail.com') {
+    mergedContent.footer.email = nextContent.footer.email
+  }
+
+  if (mergedContent.footer?.phone === '+91 8301981869') {
+    mergedContent.footer.phone = nextContent.footer.phone
+  }
+
+  if (Array.isArray(mergedContent.faq?.items)) {
+    const currentQuestions = new Set(mergedContent.faq.items.map((item) => item.question))
+    const newAeoQuestions = nextContent.faq.items.filter(
+      (item) => item.question.includes('AEO') && !currentQuestions.has(item.question),
+    )
+    mergedContent.faq.items = [...mergedContent.faq.items, ...newAeoQuestions]
   }
 
   if (mergedContent.nav?.ctaLabel === 'Go Nuts!') {
@@ -99,6 +195,61 @@ function applySeo(seo) {
   ensureMeta('keywords', seo.keywords || '')
   ensureMeta('og:title', seo.ogTitle || seo.title || '', 'property')
   ensureMeta('og:description', seo.ogDescription || seo.description || '', 'property')
+}
+
+function applyStructuredData(content) {
+  const scriptId = 'adsquirrel-structured-data'
+  document.getElementById(scriptId)?.remove()
+
+  const siteUrl = window.location.origin
+  const organizationId = `${siteUrl}/#organization`
+  const aeoService = content.services?.items?.find((service) => service.title === 'AEO Services')
+  const schema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Organization',
+        '@id': organizationId,
+        name: content.footer?.companyName || 'Nexston Corporations Pvt Ltd',
+        url: siteUrl,
+        logo: `${siteUrl}/nexston.png`,
+        email: content.footer?.email,
+        telephone: content.footer?.phone,
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: '1st Floor, Kinfra Hi-Tech Park',
+          addressLocality: 'Kalamassery',
+          addressRegion: 'Kerala',
+          postalCode: '683503',
+          addressCountry: 'IN',
+        },
+        sameAs: content.footer?.socialLinks
+          ?.map((social) => social.href)
+          .filter((href) => href && href !== '#' && !href.startsWith('mailto:')),
+      },
+      {
+        '@type': 'WebSite',
+        '@id': `${siteUrl}/#website`,
+        name: 'AdSquirrel',
+        url: siteUrl,
+        publisher: { '@id': organizationId },
+      },
+      {
+        '@type': 'Service',
+        name: aeoService?.title || 'AEO Services',
+        description: aeoService?.desc,
+        provider: { '@id': organizationId },
+        areaServed: { '@type': 'Country', name: 'India' },
+        serviceType: 'Answer Engine Optimization',
+      },
+    ],
+  }
+
+  const script = document.createElement('script')
+  script.id = scriptId
+  script.type = 'application/ld+json'
+  script.text = JSON.stringify(schema)
+  document.head.appendChild(script)
 }
 
 function useInView(threshold = 0.15) {
@@ -293,7 +444,7 @@ function HeroSection({ hero }) {
 
         {isMobile && (
           <div className="hero__video-inline">
-            <ChromaKeyVideo src="/herovideo.mp4" similarity={30} smoothness={15} />
+            <ChromaKeyVideo src="/squirrel.mp4" similarity={30} smoothness={15} />
           </div>
         )}
 
@@ -323,7 +474,7 @@ function HeroSection({ hero }) {
         </div>
       </div>
 
-      {!isMobile && <ChromaKeyVideo src="/herovideo.mp4" similarity={30} smoothness={15} />}
+      {!isMobile && <ChromaKeyVideo src="/squirrel.mp4" similarity={30} smoothness={15} />}
 
       <div className="hero__scroll-indicator">
         <div className="hero__scroll-mouse">
@@ -424,6 +575,32 @@ function AboutSection({ about }) {
   )
 }
 
+function AeoSection({ aeo }) {
+  const [ref, inView] = useInView()
+
+  return (
+    <section className="aeo" id="aeo" ref={ref}>
+      <div className="section__header">
+        <span className="section__badge">{aeo.badge}</span>
+        <h2 className="section__title">
+          {aeo.title} <span className="text-gradient">{aeo.gradientWord}</span>
+        </h2>
+        <p className="section__subtitle">{aeo.description}</p>
+      </div>
+
+      <div className={`aeo__grid ${inView ? 'aeo__grid--visible' : ''}`}>
+        {aeo.items.map((item, index) => (
+          <article className="aeo__card" key={item.title} style={{ animationDelay: `${index * 0.1}s` }}>
+            <span className="aeo__number">0{index + 1}</span>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  )
+}
+
 function StatsSection({ results }) {
   const [ref, inView] = useInView()
 
@@ -496,6 +673,47 @@ function TestimonialsSection({ testimonials }) {
             />
           ))}
         </div>
+      </div>
+    </section>
+  )
+}
+
+function FaqSection({ faq }) {
+  const [ref, inView] = useInView()
+  const [openIndex, setOpenIndex] = useState(0)
+
+  return (
+    <section className="faq" id="faq" ref={ref}>
+      <div className="section__header">
+        <span className="section__badge">{faq.badge}</span>
+        <h2 className="section__title">
+          {faq.title} <span className="text-gradient">{faq.gradientWord}</span>
+        </h2>
+      </div>
+
+      <div className={`faq__list ${inView ? 'faq__list--visible' : ''}`}>
+        {faq.items.map((item, index) => {
+          const isOpen = openIndex === index
+          const answerId = `faq-answer-${index}`
+
+          return (
+            <article className={`faq__item ${isOpen ? 'faq__item--open' : ''}`} key={item.question}>
+              <button
+                type="button"
+                className="faq__question"
+                aria-expanded={isOpen}
+                aria-controls={answerId}
+                onClick={() => setOpenIndex(isOpen ? -1 : index)}
+              >
+                <span>{item.question}</span>
+                <span className="faq__icon" aria-hidden="true">{isOpen ? '−' : '+'}</span>
+              </button>
+              <div className="faq__answer-wrap" id={answerId} hidden={!isOpen}>
+                <p className="faq__answer">{item.answer}</p>
+              </div>
+            </article>
+          )
+        })}
       </div>
     </section>
   )
@@ -672,6 +890,9 @@ function Footer({ footer }) {
             <p className="footer__contact-item"><strong>Email:</strong> {footer.email}</p>
             <p className="footer__contact-item"><strong>Phone:</strong> {footer.phone}</p>
           </div>
+          <a href={footer.verificationHref} className="footer__verification-btn">
+            {footer.verificationLabel}
+          </a>
         </div>
       </div>
 
@@ -778,6 +999,10 @@ function App() {
   }, [content])
 
   useEffect(() => {
+    applyStructuredData(content)
+  }, [content])
+
+  useEffect(() => {
     if (isCpanelRoute) return
 
     window.history.scrollRestoration = 'manual'
@@ -830,10 +1055,12 @@ function App() {
       <HeroSection hero={content.hero} />
       <MarqueeBanner items={content.marquee} />
       <ServicesSection services={content.services} />
+      <AeoSection aeo={content.aeo} />
       <AboutSection about={content.about} />
       <StatsSection results={content.results} />
       <TestimonialsSection testimonials={content.testimonials} />
       <CTASection contact={content.contact} />
+      <FaqSection faq={content.faq} />
       <FloatingWhatsAppButton />
       <FooterPoweredBy />
       <Footer footer={content.footer} />

@@ -1,16 +1,24 @@
 .chroma-video-container {
   position: absolute;
-  bottom: 44px;
-  right: -20px;
-  width: 65vw;
-  max-width: 1000px;
-  height: 95vh;
-  z-index: 5;
+  right: 2%;
+  bottom: 2rem;
+  width: min(48vw, 780px);
+  height: min(78vh, 720px);
+  z-index: 6;
   pointer-events: none;
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
   opacity: 1;
+}
+
+/* Keep the MP4 decodable without showing its original green background. */
+.chroma-video-source {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .chroma-video-canvas {
@@ -19,4 +27,15 @@
   max-width: 100%;
   object-fit: contain;
   filter: drop-shadow(0 20px 40px rgba(147, 51, 234, 0.35));
+}
+
+@media (max-width: 768px) {
+  .chroma-video-container {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: min(100%, 420px);
+    height: 360px;
+    margin: 0 auto 1.5rem;
+  }
 }

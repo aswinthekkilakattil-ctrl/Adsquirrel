@@ -121,8 +121,9 @@ export default function ChromaKeyVideo({
       }
     }
 
-    const handleCanPlay = () => {
+    const handleMediaReady = () => {
       attemptPlayback()
+      startProcessing()
     }
 
     const handlePlay = () => {
@@ -141,8 +142,9 @@ export default function ChromaKeyVideo({
       }
     }
 
-    video.addEventListener('loadeddata', handleCanPlay)
-    video.addEventListener('canplay', handleCanPlay)
+    video.addEventListener('loadedmetadata', handleMediaReady)
+    video.addEventListener('loadeddata', handleMediaReady)
+    video.addEventListener('canplay', handleMediaReady)
     video.addEventListener('playing', handlePlay)
     video.addEventListener('play', handlePlay)
     video.addEventListener('pause', handlePause)
@@ -159,8 +161,9 @@ export default function ChromaKeyVideo({
       }
 
       video.pause()
-      video.removeEventListener('loadeddata', handleCanPlay)
-      video.removeEventListener('canplay', handleCanPlay)
+      video.removeEventListener('loadedmetadata', handleMediaReady)
+      video.removeEventListener('loadeddata', handleMediaReady)
+      video.removeEventListener('canplay', handleMediaReady)
       video.removeEventListener('playing', handlePlay)
       video.removeEventListener('play', handlePlay)
       video.removeEventListener('pause', handlePause)
@@ -173,7 +176,7 @@ export default function ChromaKeyVideo({
       <video
         ref={videoRef}
         src={src}
-        style={{ display: 'none' }}
+        className="chroma-video-source"
         muted
         playsInline
         loop
