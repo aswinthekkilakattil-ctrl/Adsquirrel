@@ -1,13 +1,13 @@
 ﻿export const defaultSiteContent = {
   seo: {
-    title: 'AdSquirrel | Wild Marketing That Gets Results',
+    title: 'AdSquirrel | Advertising & Marketing Agency in Kerala',
     description:
-      'AdSquirrel is a playful growth marketing agency focused on viral campaigns, social media, branding, SEO, and performance results.',
+      'AdSquirrel is a Kerala advertising and digital marketing agency helping brands grow through creative campaigns, performance marketing, SEO, AEO, branding, and video.',
     keywords:
-      'marketing agency, social media marketing, seo agency, branding, video production, growth marketing',
-    ogTitle: 'AdSquirrel | Wild Marketing That Gets Results',
+      'advertising agency Kerala, advertising company Kerala, digital marketing agency Kerala, advertising agency Kochi, SEO agency Kerala, AEO agency Kerala, branding agency Kerala',
+    ogTitle: 'AdSquirrel | Advertising & Marketing Agency in Kerala',
     ogDescription:
-      'Launch viral campaigns, bold branding, and measurable growth with AdSquirrel.',
+      'Creative advertising, digital marketing, branding, SEO, AEO, and performance campaigns for Kerala and Kochi businesses.',
   },
   nav: {
     servicesLabel: 'Services',
@@ -23,7 +23,7 @@
     titleLine3Prefix: 'We Go',
     titleBounce: 'Nuts.',
     subtitle:
-      'AdSquirrel is a results-driven marketing agency that unlocks digital growth through standout creative, focused campaigns, and measurable results.',
+      'AdSquirrel helps Kerala and Kochi brands grow with sharp strategy, standout creative, performance marketing, SEO, AEO, social media, branding, and video.',
     primaryCta: 'Start Your Campaign',
     secondaryCta: 'Read Love Letters',
     stats: [
@@ -242,6 +242,7 @@
     ],
     email: 'support@nexston.in',
     phone: '+91 9846730362',
+    whatsapp: '+91 8301981869',
     verificationLabel: 'Verify Certificate',
     verificationHref: '#',
     copyright: '© 2026 Nexston Corporations Pvt Ltd. All rights reserved.',

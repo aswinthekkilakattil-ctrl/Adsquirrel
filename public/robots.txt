@@ -1,6 +1,7 @@
 User-agent: Googlebot
 Allow: /
 Disallow: /admin
+Disallow: /cpanel
 
 User-agent: Googlebot-Image
 Allow: /
@@ -8,6 +9,7 @@ Allow: /
 User-agent: *
 Allow: /
 Disallow: /admin
+Disallow: /cpanel
 
-Host: adsquirrel.in
-Sitemap: https://adsquirrel.in/sitemap.xml
+Host: www.adsquirrel.in
+Sitemap: https://www.adsquirrel.in/sitemap.xml

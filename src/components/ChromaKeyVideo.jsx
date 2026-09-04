@@ -22,6 +22,10 @@ export default function ChromaKeyVideo({
     let animationFrameId = 0
     let retryTimeoutId = 0
     let disposed = false
+    let lastProcessedAt = 0
+    const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false
+    const isMobile = window.matchMedia?.('(max-width: 768px)').matches ?? false
+    const frameInterval = isMobile ? 66 : 33
 
     const stopProcessing = () => {
       if (animationFrameId) {
@@ -30,15 +34,23 @@ export default function ChromaKeyVideo({
       }
     }
 
-    const processFrame = () => {
+    const processFrame = (timestamp = 0) => {
       if (disposed) return
       animationFrameId = requestAnimationFrame(processFrame)
 
-      if (video.paused || video.ended || video.readyState < 2) {
+      if (
+        prefersReducedMotion ||
+        document.visibilityState !== 'visible' ||
+        video.paused ||
+        video.ended ||
+        video.readyState < 2 ||
+        timestamp - lastProcessedAt < frameInterval
+      ) {
         return
       }
 
-      const MAX_WIDTH = 1280
+      lastProcessedAt = timestamp
+      const MAX_WIDTH = isMobile ? 520 : 960
       let width = video.videoWidth
       let height = video.videoHeight
 
@@ -89,7 +101,7 @@ export default function ChromaKeyVideo({
     }
 
     const startProcessing = () => {
-      if (!animationFrameId) {
+      if (!prefersReducedMotion && document.visibilityState === 'visible' && !animationFrameId) {
         animationFrameId = requestAnimationFrame(processFrame)
       }
     }
@@ -139,6 +151,9 @@ export default function ChromaKeyVideo({
     const handleVisibilityChange = () => {
       if (document.visibilityState === 'visible') {
         attemptPlayback()
+        startProcessing()
+      } else {
+        stopProcessing()
       }
     }
 

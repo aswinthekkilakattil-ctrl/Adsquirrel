@@ -1,18 +1,71 @@
-﻿import { Fragment, useEffect, useRef, useState } from 'react'
+﻿import { Fragment, Suspense, lazy, useEffect, useMemo, useRef, useState } from 'react'
+import { onAuthStateChanged } from 'firebase/auth'
 import { onValue, ref as dbRef, set } from 'firebase/database'
 import './App.css'
 import ChromaKeyVideo from './components/ChromaKeyVideo.jsx'
-import { database } from './firebase.js'
+import { auth, database, isFirebaseConfigured } from './firebase.js'
 import { defaultSiteContent } from './siteContent.js'
-import { Suspense, lazy } from 'react'
 
 const AdminPanel = lazy(() => import('./components/AdminPanel.jsx'))
 
 const CONTACT_FORM_CREDENTIALS = {
-  serviceId: 'service_mtz6ebh',
-  templateId: 'template_ck6g9ka',
-  publicKey: 'b0iyLIp5Q2nGA7UNd',
-  notificationEmail: 'nexstoncorporations@gmail.com',
+  serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID || '',
+  templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || '',
+  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY || '',
+  notificationEmail: import.meta.env.VITE_CONTACT_NOTIFICATION_EMAIL || '',
+}
+
+const SITE_ORIGIN = 'https://www.adsquirrel.in'
+
+const LANDING_PAGES = {
+  '/advertising-company-kerala': {
+    seo: {
+      title: 'Best Advertising Company in Kerala | AdSquirrel',
+      description:
+        'AdSquirrel is a Kerala advertising company for creative campaigns, digital advertising, branding, SEO, AEO, video production, and performance marketing.',
+      ogTitle: 'Best Advertising Company in Kerala | AdSquirrel',
+      ogDescription:
+        'Creative advertising and digital marketing support for Kerala brands that want sharper campaigns and measurable growth.',
+      canonical: `${SITE_ORIGIN}/advertising-company-kerala`,
+    },
+    eyebrow: 'Advertising Company in Kerala',
+    title: 'Creative advertising for Kerala brands ready to be remembered',
+    intro:
+      'AdSquirrel blends campaign strategy, bold creative, digital advertising, SEO, AEO, branding, social media, and video production for businesses across Kerala.',
+    sections: [
+      ['Campaign Strategy', 'Positioning, messaging, creative direction, channel planning, and campaign execution built around your business goals.'],
+      ['Digital Advertising', 'Meta, Google, social, and performance-led campaigns designed to reach the right audience and improve enquiry quality.'],
+      ['Brand & Content', 'Identity systems, campaign assets, videos, and social content that make your brand easier to trust and easier to remember.'],
+    ],
+    faq: [
+      ['What makes AdSquirrel an advertising company in Kerala?', 'The agency supports Kerala-focused businesses with advertising strategy, creative campaigns, digital marketing, branding, SEO, AEO, and video-led content.'],
+      ['Do you handle both creative and performance marketing?', 'Yes. AdSquirrel combines brand thinking with measurable campaign execution so creative work is connected to business outcomes.'],
+    ],
+  },
+  '/advertising-agency-kochi': {
+    seo: {
+      title: 'Advertising Agency in Kochi | AdSquirrel',
+      description:
+        'AdSquirrel helps Kochi and Kerala businesses with advertising campaigns, social media marketing, branding, SEO, AEO, video production, and performance marketing.',
+      ogTitle: 'Advertising Agency in Kochi | AdSquirrel',
+      ogDescription:
+        'Advertising, branding, SEO, AEO, social media, and performance marketing for Kochi and Kerala businesses.',
+      canonical: `${SITE_ORIGIN}/advertising-agency-kochi`,
+    },
+    eyebrow: 'Advertising Agency in Kochi',
+    title: 'Advertising, branding, and digital growth support for Kochi businesses',
+    intro:
+      'For Kochi brands, AdSquirrel brings together local market understanding, creative campaign ideas, and practical digital execution without claiming a separate physical office beyond the business details shown on this site.',
+    sections: [
+      ['Social Media & Paid Campaigns', 'Content calendars, ad creatives, targeting, testing, and campaign reporting for businesses that need consistent visibility.'],
+      ['SEO & AEO', 'Search-friendly content, answer-led page structure, technical fixes, and service messaging that make your business easier to discover.'],
+      ['Video & Brand Identity', 'Short-form videos, campaign visuals, identity systems, and brand assets made for digital-first customer attention.'],
+    ],
+    faq: [
+      ['Can AdSquirrel work with Kochi businesses?', 'Yes. The current business information includes Kochi, and the agency can support Kochi businesses with advertising, branding, SEO, AEO, and performance marketing.'],
+      ['Do you claim a separate Kochi office?', 'No. This page only uses the business information already present in the website content and avoids inventing unsupported locations.'],
+    ],
+  },
 }
 
 function cloneDefaultContent() {
@@ -176,9 +229,15 @@ function mergeWithDefaults(defaultValue, incomingValue) {
   return incomingValue ?? defaultValue
 }
 
+function seededValue(seed) {
+  const value = Math.sin(seed * 9301 + 49297) * 233280
+  return value - Math.floor(value)
+}
+
 function applySeo(seo) {
   if (!seo) return
 
+  const canonicalUrl = seo.canonical || `${SITE_ORIGIN}${window.location.pathname === '/' ? '/' : window.location.pathname}`
   document.title = seo.title || defaultSiteContent.seo.title
 
   const ensureMeta = (name, value, attr = 'name') => {
@@ -193,15 +252,34 @@ function applySeo(seo) {
 
   ensureMeta('description', seo.description || '')
   ensureMeta('keywords', seo.keywords || '')
+  ensureMeta('robots', window.location.pathname === '/cpanel' ? 'noindex, nofollow' : 'index, follow')
   ensureMeta('og:title', seo.ogTitle || seo.title || '', 'property')
   ensureMeta('og:description', seo.ogDescription || seo.description || '', 'property')
+  ensureMeta('og:url', canonicalUrl, 'property')
+  ensureMeta('og:type', seo.ogType || 'website', 'property')
+  ensureMeta('twitter:card', seo.ogImage ? 'summary_large_image' : 'summary')
+  ensureMeta('twitter:title', seo.ogTitle || seo.title || '')
+  ensureMeta('twitter:description', seo.ogDescription || seo.description || '')
+
+  if (seo.ogImage) {
+    ensureMeta('og:image', seo.ogImage, 'property')
+    ensureMeta('twitter:image', seo.ogImage)
+  }
+
+  let canonical = document.head.querySelector('link[rel="canonical"]')
+  if (!canonical) {
+    canonical = document.createElement('link')
+    canonical.setAttribute('rel', 'canonical')
+    document.head.appendChild(canonical)
+  }
+  canonical.setAttribute('href', canonicalUrl)
 }
 
 function applyStructuredData(content) {
   const scriptId = 'adsquirrel-structured-data'
   document.getElementById(scriptId)?.remove()
 
-  const siteUrl = window.location.origin
+  const siteUrl = SITE_ORIGIN
   const organizationId = `${siteUrl}/#organization`
   const aeoService = content.services?.items?.find((service) => service.title === 'AEO Services')
   const schema = {
@@ -272,14 +350,14 @@ function useInView(threshold = 0.15) {
 }
 
 function ParticleField() {
-  const particles = Array.from({ length: 40 }, (_, i) => ({
+  const particles = useMemo(() => Array.from({ length: 40 }, (_, i) => ({
     id: i,
-    left: Math.random() * 100,
-    size: Math.random() * 6 + 2,
-    delay: Math.random() * 8,
-    duration: Math.random() * 10 + 8,
-    opacity: Math.random() * 0.4 + 0.1,
-  }))
+    left: seededValue(i + 1) * 100,
+    size: seededValue(i + 41) * 6 + 2,
+    delay: seededValue(i + 81) * 8,
+    duration: seededValue(i + 121) * 10 + 8,
+    opacity: seededValue(i + 161) * 0.4 + 0.1,
+  })), [])
 
   return (
     <div className="particle-field">
@@ -302,14 +380,14 @@ function ParticleField() {
 }
 
 function FloatingAcorns() {
-  const acorns = Array.from({ length: 12 }, (_, i) => ({
+  const acorns = useMemo(() => Array.from({ length: 12 }, (_, i) => ({
     id: i,
-    left: Math.random() * 100,
-    top: Math.random() * 100,
-    size: Math.random() * 30 + 15,
-    delay: Math.random() * 6,
-    duration: Math.random() * 8 + 6,
-  }))
+    left: seededValue(i + 201) * 100,
+    top: seededValue(i + 221) * 100,
+    size: seededValue(i + 241) * 30 + 15,
+    delay: seededValue(i + 261) * 6,
+    duration: seededValue(i + 281) * 8 + 6,
+  })), [])
 
   return (
     <div className="floating-acorns">
@@ -336,6 +414,7 @@ function Navbar({ nav }) {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [hidden, setHidden] = useState(false)
+  const homePrefix = window.location.pathname === '/' ? '' : '/'
 
   useEffect(() => {
     let lastScrollY = window.scrollY
@@ -362,30 +441,41 @@ function Navbar({ nav }) {
     return () => window.removeEventListener('scroll', handler)
   }, [menuOpen])
 
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setMenuOpen(false)
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [])
+
   return (
     <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''} ${hidden ? 'navbar--hidden' : ''}`} id="navbar">
       <div className="navbar__inner">
-        <a href="#hero" className="navbar__logo" id="nav-logo">
+        <a href={`${homePrefix}#hero`} className="navbar__logo" id="nav-logo">
           <img src="/squirrel-wave.png" alt="AdSquirrel" className="navbar__logo-img" />
           <span className="navbar__logo-text">
             Ad<span className="navbar__logo-highlight">Squirrel</span>
           </span>
         </a>
 
-        <div className={`navbar__links ${menuOpen ? 'navbar__links--open' : ''}`}>
-          <a href="#services" className="navbar__link" onClick={() => setMenuOpen(false)}>
+        <div className={`navbar__links ${menuOpen ? 'navbar__links--open' : ''}`} id="primary-navigation">
+          <a href={`${homePrefix}#services`} className="navbar__link" onClick={() => setMenuOpen(false)}>
             {nav.servicesLabel}
           </a>
-          <a href="#about" className="navbar__link" onClick={() => setMenuOpen(false)}>
+          <a href={`${homePrefix}#about`} className="navbar__link" onClick={() => setMenuOpen(false)}>
             {nav.aboutLabel}
           </a>
-          <a href="#stats" className="navbar__link" onClick={() => setMenuOpen(false)}>
+          <a href={`${homePrefix}#stats`} className="navbar__link" onClick={() => setMenuOpen(false)}>
             {nav.resultsLabel}
           </a>
-          <a href="#testimonials" className="navbar__link" onClick={() => setMenuOpen(false)}>
+          <a href={`${homePrefix}#testimonials`} className="navbar__link" onClick={() => setMenuOpen(false)}>
             {nav.reviewsLabel}
           </a>
-          <a href="#contact" className="navbar__cta-btn" id="nav-cta" onClick={() => setMenuOpen(false)}>
+          <a href={`${homePrefix}#contact`} className="navbar__cta-btn" id="nav-cta" onClick={() => setMenuOpen(false)}>
             {nav.ctaLabel}
           </a>
         </div>
@@ -395,6 +485,8 @@ function Navbar({ nav }) {
           onClick={() => setMenuOpen(!menuOpen)}
           id="nav-burger"
           aria-label="Toggle navigation menu"
+          aria-controls="primary-navigation"
+          aria-expanded={menuOpen}
         >
           <span></span>
           <span></span>
@@ -627,14 +719,21 @@ function StatsSection({ results }) {
 function TestimonialsSection({ testimonials }) {
   const [ref, inView] = useInView()
   const [active, setActive] = useState(0)
+  const [paused, setPaused] = useState(false)
+  const prefersReducedMotion = useMemo(
+    () => window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false,
+    [],
+  )
 
   useEffect(() => {
+    if (paused || prefersReducedMotion || testimonials.items.length < 2) return undefined
+
     const interval = setInterval(() => {
       setActive((prev) => (prev + 1) % testimonials.items.length)
     }, 5000)
 
     return () => clearInterval(interval)
-  }, [testimonials.items.length])
+  }, [paused, prefersReducedMotion, testimonials.items.length])
 
   return (
     <section className="testimonials" id="testimonials" ref={ref}>
@@ -664,6 +763,14 @@ function TestimonialsSection({ testimonials }) {
         ))}
 
         <div className="testimonials__dots">
+          <button
+            className="testimonials__pause"
+            type="button"
+            onClick={() => setPaused((current) => !current)}
+            aria-label={paused ? 'Resume testimonial autoplay' : 'Pause testimonial autoplay'}
+          >
+            {paused ? 'Play' : 'Pause'}
+          </button>
           {testimonials.items.map((item, index) => (
             <button
               key={`${item.author}-dot`}
@@ -761,6 +868,14 @@ function CTASection({ contact }) {
     setStatus('sending')
 
     try {
+      if (
+        !CONTACT_FORM_CREDENTIALS.serviceId ||
+        !CONTACT_FORM_CREDENTIALS.templateId ||
+        !CONTACT_FORM_CREDENTIALS.publicKey
+      ) {
+        throw new Error('Contact form is not configured. Add EmailJS VITE_* values before publishing.')
+      }
+
       const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -776,7 +891,7 @@ function CTASection({ contact }) {
             from_name: form.name.trim(),
             from_email: form.email.trim(),
             context: form.message.trim(),
-            to_email: CONTACT_FORM_CREDENTIALS.notificationEmail,
+            to_email: CONTACT_FORM_CREDENTIALS.notificationEmail || undefined,
           },
         }),
       })
@@ -811,43 +926,58 @@ function CTASection({ contact }) {
 
         <form className="cta-section__form" id="contact-form" onSubmit={handleSubmit}>
           <div className="cta-form__row">
+            <label className="cta-form__label">
+              <span>Name</span>
+              <input
+                type="text"
+                placeholder={contact.namePlaceholder}
+                className="cta-form__input"
+                value={form.name}
+                onChange={handleFieldChange('name')}
+                autoComplete="name"
+                required
+              />
+            </label>
+            <label className="cta-form__label">
+              <span>Email</span>
+              <input
+                type="email"
+                placeholder={contact.emailPlaceholder}
+                className="cta-form__input"
+                value={form.email}
+                onChange={handleFieldChange('email')}
+                autoComplete="email"
+                required
+              />
+            </label>
+          </div>
+          <label className="cta-form__label">
+            <span>Company</span>
             <input
               type="text"
-              placeholder={contact.namePlaceholder}
+              placeholder={contact.companyPlaceholder}
               className="cta-form__input"
-              value={form.name}
-              onChange={handleFieldChange('name')}
-              required
+              value={form.company}
+              onChange={handleFieldChange('company')}
+              autoComplete="organization"
             />
-            <input
-              type="email"
-              placeholder={contact.emailPlaceholder}
-              className="cta-form__input"
-              value={form.email}
-              onChange={handleFieldChange('email')}
+          </label>
+          <label className="cta-form__label">
+            <span>Project message</span>
+            <textarea
+              placeholder={contact.messagePlaceholder}
+              className="cta-form__textarea"
+              rows="4"
+              value={form.message}
+              onChange={handleFieldChange('message')}
               required
-            />
-          </div>
-          <input
-            type="text"
-            placeholder={contact.companyPlaceholder}
-            className="cta-form__input"
-            value={form.company}
-            onChange={handleFieldChange('company')}
-          />
-          <textarea
-            placeholder={contact.messagePlaceholder}
-            className="cta-form__textarea"
-            rows="4"
-            value={form.message}
-            onChange={handleFieldChange('message')}
-            required
-          ></textarea>
+            ></textarea>
+          </label>
           {status === 'error' && error && (
-            <p className="cta-form__feedback cta-form__feedback--error">{error}</p>
+            <p className="cta-form__feedback cta-form__feedback--error" role="alert">{error}</p>
           )}
           {status === 'success' && (
-            <p className="cta-form__feedback cta-form__feedback--success">{contact.successMessage}</p>
+            <p className="cta-form__feedback cta-form__feedback--success" role="status">{contact.successMessage}</p>
           )}
           <button type="submit" className="btn btn--primary btn--3d btn--large" disabled={status === 'sending'}>
             <span>{status === 'sending' ? 'Sending...' : contact.submitLabel}</span>
@@ -860,6 +990,8 @@ function CTASection({ contact }) {
 }
 
 function Footer({ footer }) {
+  const hasVerificationHref = footer.verificationHref && footer.verificationHref !== '#'
+
   return (
     <footer className="footer" id="footer">
       <div className="footer__inner">
@@ -890,9 +1022,15 @@ function Footer({ footer }) {
             <p className="footer__contact-item"><strong>Email:</strong> {footer.email}</p>
             <p className="footer__contact-item"><strong>Phone:</strong> {footer.phone}</p>
           </div>
-          <a href={footer.verificationHref} className="footer__verification-btn">
-            {footer.verificationLabel}
-          </a>
+          {hasVerificationHref ? (
+            <a href={footer.verificationHref} className="footer__verification-btn">
+              {footer.verificationLabel}
+            </a>
+          ) : (
+            <span className="footer__verification-btn footer__verification-btn--disabled" aria-disabled="true">
+              {footer.verificationLabel} unavailable
+            </span>
+          )}
         </div>
       </div>
 
@@ -950,14 +1088,18 @@ function FooterPoweredBy() {
   )
 }
 
-function FloatingWhatsAppButton() {
+function FloatingWhatsAppButton({ phone }) {
+  const whatsappNumber = String(phone || '').replace(/\D/g, '')
+
+  if (!whatsappNumber) return null
+
   return (
     <a
-      href="https://wa.me/918301981869"
+      href={`https://wa.me/${whatsappNumber}`}
       target="_blank"
       rel="noreferrer"
       className="floating-whatsapp"
-      aria-label="Chat on WhatsApp"
+      aria-label="Chat with AdSquirrel on WhatsApp"
     >
       <span className="floating-whatsapp__shine" aria-hidden="true"></span>
       <svg
@@ -974,19 +1116,91 @@ function FloatingWhatsAppButton() {
   )
 }
 
+function SeoLandingPage({ page, content }) {
+  return (
+    <main className="landing-page">
+      <Navbar nav={content.nav} />
+      <section className="landing-hero">
+        <span className="section__badge">{page.eyebrow}</span>
+        <h1 className="landing-hero__title">{page.title}</h1>
+        <p className="landing-hero__intro">{page.intro}</p>
+        <div className="hero__actions landing-hero__actions">
+          <a href="/#contact" className="btn btn--primary btn--3d">Start a Project</a>
+          <a href="/#services" className="btn btn--glass">Explore Services</a>
+        </div>
+      </section>
+
+      <section className="landing-section">
+        <h2>How AdSquirrel Helps</h2>
+        <div className="landing-grid">
+          {page.sections.map(([title, text]) => (
+            <article className="landing-card" key={title}>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="landing-section landing-section--links">
+        <h2>Connected Services</h2>
+        <div className="landing-links">
+          {content.services.items.map((service) => (
+            <a key={service.title} href="/#services">{service.title}</a>
+          ))}
+          <a href="/#aeo">Answer Engine Optimization</a>
+          <a href="/#testimonials">Client stories</a>
+          <a href="/#contact">Contact AdSquirrel</a>
+        </div>
+      </section>
+
+      <section className="landing-section">
+        <h2>Questions Businesses Ask</h2>
+        <div className="faq__list faq__list--visible">
+          {page.faq.map(([question, answer], index) => (
+            <article className="faq__item" key={question}>
+              <button className="faq__question" type="button" aria-expanded="true" aria-controls={`landing-faq-${index}`}>
+                <span>{question}</span>
+              </button>
+              <div className="faq__answer-wrap" id={`landing-faq-${index}`}>
+                <p className="faq__answer">{answer}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <CTASection contact={content.contact} />
+      <FooterPoweredBy />
+      <Footer footer={content.footer} />
+    </main>
+  )
+}
+
 function App() {
   const [content, setContent] = useState(cloneDefaultContent())
   const [adminUser, setAdminUser] = useState(null)
   const isCpanelRoute = window.location.pathname === '/cpanel'
+  const landingPage = LANDING_PAGES[window.location.pathname]
 
   useEffect(() => {
+    if (!database) {
+      return undefined
+    }
+
     const contentRef = dbRef(database, 'siteContent')
     const unsubscribeContent = onValue(contentRef, (snapshot) => {
       if (snapshot.exists()) {
-        setContent(normalizeContent(snapshot.val()))
+        try {
+          setContent(normalizeContent(snapshot.val()))
+        } catch {
+          setContent(cloneDefaultContent())
+        }
       } else {
         setContent(cloneDefaultContent())
       }
+    }, () => {
+      setContent(cloneDefaultContent())
     })
 
     return () => {
@@ -995,8 +1209,18 @@ function App() {
   }, [])
 
   useEffect(() => {
-    applySeo(content.seo)
-  }, [content])
+    if (!auth) {
+      return undefined
+    }
+
+    return onAuthStateChanged(auth, (user) => {
+      setAdminUser(user)
+    })
+  }, [])
+
+  useEffect(() => {
+    applySeo(landingPage?.seo || content.seo)
+  }, [content, landingPage])
 
   useEffect(() => {
     applyStructuredData(content)
@@ -1023,6 +1247,10 @@ function App() {
   }, [isCpanelRoute])
 
   const saveContent = async (nextContent) => {
+    if (!database || !isFirebaseConfigured) {
+      throw new Error('Firebase is not configured for saving. Add VITE_FIREBASE_* env values and Realtime Database rules.')
+    }
+
     await set(dbRef(database, 'siteContent'), nextContent)
     setContent(nextContent)
   }
@@ -1048,6 +1276,10 @@ function App() {
     )
   }
 
+  if (landingPage) {
+    return <SeoLandingPage page={landingPage} content={content} />
+  }
+
   return (
     <div className="app">
       <CustomCursor />
@@ -1061,7 +1293,7 @@ function App() {
       <TestimonialsSection testimonials={content.testimonials} />
       <CTASection contact={content.contact} />
       <FaqSection faq={content.faq} />
-      <FloatingWhatsAppButton />
+      <FloatingWhatsAppButton phone={content.footer.whatsapp || content.footer.phone} />
       <FooterPoweredBy />
       <Footer footer={content.footer} />
     </div>

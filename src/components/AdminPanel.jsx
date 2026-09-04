@@ -1,8 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
+import { signInWithEmailAndPassword, signOut } from 'firebase/auth'
+import { auth } from '../firebase.js'
 import './AdminPanel.css'
-
-const ADMIN_USERNAME = import.meta.env.VITE_ADMIN_USERNAME || 'ASWIN'
-const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD || 'NEXSTON@2026'
 
 function prettyLabel(value) {
   return value
@@ -167,11 +166,12 @@ export default function AdminPanel({
     setStatus({ type: 'idle', message: '' })
 
     try {
-      if (username !== ADMIN_USERNAME || password !== ADMIN_PASSWORD) {
-        throw new Error('Invalid username or password.')
+      if (!auth) {
+        throw new Error('Firebase Authentication is not configured. Add VITE_FIREBASE_* env values before using cpanel.')
       }
 
-      onLogin({ username })
+      const credential = await signInWithEmailAndPassword(auth, username, password)
+      onLogin(credential.user)
       setPassword('')
       setUsername('')
       setStatus({ type: 'success', message: 'Logged in successfully.' })
@@ -209,6 +209,9 @@ export default function AdminPanel({
   }
 
   const handleLogout = () => {
+    if (auth) {
+      signOut(auth).catch(() => undefined)
+    }
     onLogout()
     setStatus({ type: 'success', message: 'Logged out.' })
   }
@@ -264,6 +267,7 @@ export default function AdminPanel({
                 <input
                   className="admin-panel__input"
                   type="text"
+                  autoComplete="username"
                   value={username}
                   onChange={(event) => setUsername(event.target.value)}
                   required
@@ -274,6 +278,7 @@ export default function AdminPanel({
                 <input
                   className="admin-panel__input"
                   type="password"
+                  autoComplete="current-password"
                   value={password}
                   onChange={(event) => setPassword(event.target.value)}
                   required
@@ -282,14 +287,14 @@ export default function AdminPanel({
               <button className="admin-panel__button admin-panel__button--primary" disabled={loggingIn}>
                 {loggingIn ? 'Signing in...' : 'Login'}
               </button>
-              <p className="admin-panel__hint">Use the fixed admin credentials stored in your local env file.</p>
+              <p className="admin-panel__hint">Use a Firebase Authentication admin email and password.</p>
             </form>
           ) : (
             <>
               <section className="admin-panel__section">
                 <div className="admin-panel__row">
                   <h4>Website Sections</h4>
-                  <span className="admin-panel__hint">{ADMIN_USERNAME}</span>
+                  <span className="admin-panel__hint">{isAuthenticated ? 'Authenticated' : ''}</span>
                 </div>
 
                 <section className="admin-panel__section-card admin-panel__section-card--featured">
