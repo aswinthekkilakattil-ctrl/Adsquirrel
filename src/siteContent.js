@@ -23,7 +23,7 @@
     titleLine3Prefix: 'We Go',
     titleBounce: 'Nuts.',
     subtitle:
-      'AdSquirrel helps Kerala and Kochi brands grow with sharp strategy, standout creative, performance marketing, SEO, AEO, social media, branding, and video.',
+      "AdSquirrel is a results-driven marketing agency that unlocks digital growth through standout creative, focused campaigns, and measurable results.",
     primaryCta: 'Start Your Campaign',
     secondaryCta: 'Read Love Letters',
     stats: [
