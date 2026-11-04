@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <title>AdSquirrel. Digital growth. Local roots.</title>
+  <rect width="1200" height="630" fill="#f6f4ec"/>
+  <path d="M64 120h1072" stroke="#171719" stroke-opacity=".2"/>
+  <text x="64" y="81" font-family="Manrope,Arial,sans-serif" font-size="35" font-weight="800" letter-spacing="-1.7" fill="#171719">AdSquirrel<tspan fill="#7541e8">.</tspan></text>
+  <text x="1136" y="77" text-anchor="end" font-family="Manrope,Arial,sans-serif" font-size="17" fill="#171719">KERALA, INDIA ↗</text>
+  <text x="64" y="268" font-family="Manrope,Arial,sans-serif" font-size="95" font-weight="600" letter-spacing="-6" fill="#171719">Digital growth.</text>
+  <text x="64" y="373" font-family="Manrope,Arial,sans-serif" font-size="95" font-weight="600" letter-spacing="-6" fill="#7541e8">Local roots.</text>
+  <text x="68" y="453" font-family="Manrope,Arial,sans-serif" font-size="21" fill="#55555b">Strategy. Creativity. Search. Performance.</text>
+  <g transform="translate(928 316) rotate(-24)">
+    <ellipse rx="135" ry="159" fill="none" stroke="#7541e8" stroke-width="65"/>
+    <path d="M-93 72C-49 34 38-31 102-71" fill="none" stroke="#f6f4ec" stroke-width="32"/>
+    <path d="M-93 72C-49 34 38-31 102-71" fill="none" stroke="#7541e8" stroke-width="24"/>
+  </g>
+  <circle cx="1087" cy="489" r="29" fill="#d5f565"/>
+  <path d="M64 535h1072" stroke="#171719" stroke-opacity=".2"/>
+  <text x="64" y="580" font-family="Manrope,Arial,sans-serif" font-size="17" fill="#55555b">A DIGITAL MARKETING AGENCY FOR WHAT'S NEXT.</text>
+  <text x="1136" y="580" text-anchor="end" font-family="Manrope,Arial,sans-serif" font-size="17" fill="#55555b">adsquirrel.in</text>
+</svg>

@@ -8,6 +8,18 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+.env
+.env.*
+!.env.example
+.astro
+.cache
+.npm-cache
+.sites-runtime
+.sites-checkout
+.sites-checkout-*
+artifacts
+*.tar.gz
+*.tgz
 dist
 dist-ssr
 *.local

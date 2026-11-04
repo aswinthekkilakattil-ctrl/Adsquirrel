@@ -1,0 +1,29 @@
+# AdSquirrel
+
+AdSquirrel is a digital marketing agency operated by Nexston Corporations Pvt Ltd.
+
+## Business
+- Office: 1st Floor, Kinfra Hi-Tech Park, Kalamassery, Kerala – 683503, India.
+- Service area: Kerala. Location pages represent service areas, not additional offices.
+- Email: support@nexston.in
+- Telephone: +91 9846730362
+
+## Services
+- Search engine optimization (SEO) and answer engine optimization (AEO)
+- Google Ads and Meta Ads / performance marketing
+- Social media strategy and content
+- Brand strategy and design
+- Website design and development
+- Video and creative production
+
+## Explore
+- [Home](/): Agency services, approach and contact options.
+- [About](/about/): Who we are; a digital marketing team working from the Kerala Startup Mission campus at Kinfra Hi-Tech Park, Kalamassery.
+- [Guides](/guides/): Kerala-specific cost and comparison guides: Meta ads cost, Google Ads cost, agency charges, Meta ads vs Google Ads, SEO vs Google Ads, agency vs freelancer vs in-house.
+- [Services](/services/): Meta ads (Facebook and Instagram ads), Google Ads, social media marketing, creative, SEO, branding, video production and website design, with pages for each town in Thrissur and Ernakulam districts, e.g. /services/meta-ads/irinjalakuda/.
+- [Locations](/locations/): Sourced Kerala place directory.
+- [Industries](/industries/): Business categories and relevant marketing approaches.
+- [Data sources](/data-sources/): Dataset provenance and coverage limitations.
+
+## Accuracy
+No particular ranking, AI citation or business outcome is guaranteed. Illustrative creative work is labeled as a concept. The website does not present fabricated client reviews as genuine testimonials. This file is descriptive and does not provide special inclusion in an AI engine.

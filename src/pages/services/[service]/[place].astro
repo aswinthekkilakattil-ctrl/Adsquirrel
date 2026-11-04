@@ -1,0 +1,10 @@
+---
+import ServicePage from '../../../components/ServicePage.astro';
+import { services } from '../../../lib/services.mjs';
+import { servicePlaces } from '../../../lib/catalog.mjs';
+export function getStaticPaths() {
+  return services.flatMap((service) => servicePlaces.map((place) => ({ params: { service: service.slug, place: place.slug }, props: { service, place } })));
+}
+const { service, place } = Astro.props;
+---
+<ServicePage service={service} place={place} />

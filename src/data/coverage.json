@@ -1,0 +1,97 @@
+{
+  "generatedAt": "2026-11-03T18:58:59.174Z",
+  "counts": {
+    "places": 10566,
+    "districts": 14,
+    "lgdVillageSourceRows": 1666,
+    "lgdTaluks": 78,
+    "osmSourceNodes": 9995,
+    "marketingIndustries": 102,
+    "nicRecords": 4656,
+    "nic2008Subclasses": 1304,
+    "nic2025Subclasses": 1887
+  },
+  "placesByType": {
+    "neighbourhood": 3301,
+    "locality": 889,
+    "hamlet": 1165,
+    "village": 3318,
+    "suburb": 451,
+    "quarter": 570,
+    "census-town": 376,
+    "town": 248,
+    "taluk": 78,
+    "isolated-dwelling": 139,
+    "district": 14,
+    "farm": 5,
+    "city-block": 1,
+    "city": 9,
+    "colony": 2
+  },
+  "placesByDistrict": {
+    "Wayanad": 511,
+    "Idukki": 662,
+    "Kozhikode": 826,
+    "Malappuram": 921,
+    "Kottayam": 1036,
+    "Pathanamthitta": 632,
+    "Thiruvananthapuram": 681,
+    "Kasaragod": 879,
+    "Thrissur": 552,
+    "Palakkad": 876,
+    "Kollam": 858,
+    "Ernakulam": 659,
+    "Kannur": 759,
+    "Alappuzha": 714
+  },
+  "nicByVersion": {
+    "NIC 2008": 2049,
+    "NIC 2025": 2607
+  },
+  "excluded": {
+    "osmAdministrativeOrNonSettlementNodes": 30,
+    "osmNodesOutsideAvailableDistrictPolygons": 10,
+    "unusualPlaceTagsNormalizedToLocality": 32
+  },
+  "sources": [
+    {
+      "name": "Local Government Directory (LGD)",
+      "publisher": "Ministry of Panchayati Raj, Government of India",
+      "url": "https://lgdirectory.gov.in/",
+      "download": "https://github.com/mchittineni/india-village-finder/releases/download/v1.5.19/kerala_data.zip",
+      "snapshot": "2026-09-25",
+      "license": "Government Open Data License - India (GODL-India)",
+      "licenseUrl": "https://data.gov.in/government-open-data-license-india",
+      "mirror": "mchittineni/india-village-finder release v1.5.19; derived from the data.gov.in LGD API",
+      "modifications": "Names normalized for display, district/taluk records added, aliases merged, source IDs preserved, stable slugs generated."
+    },
+    {
+      "name": "OpenStreetMap place nodes",
+      "publisher": "OpenStreetMap contributors",
+      "url": "https://www.openstreetmap.org/copyright",
+      "download": "https://overpass-api.de/api/interpreter",
+      "snapshot": "2026-11-03T18:53:35Z",
+      "license": "Open Database License (ODbL) 1.0",
+      "licenseUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "query": "[out:json][timeout:90];area(3602018151)->.kerala;node[place][name](area.kerala);out;",
+      "modifications": "Settlement/locality nodes filtered, mapped into district polygons, same-name district entries merged, names and slugs normalized."
+    },
+    {
+      "name": "NIC 2008 and NIC 2025",
+      "publisher": "Ministry of Statistics and Programme Implementation, Government of India",
+      "url": "https://mospi.gov.in/classification/national-industrial-classification",
+      "downloads": [
+        "https://www.mospi.gov.in/uploads/documents/publicDocuments/1760616763355-NIC_2008.xlsx",
+        "https://www.mospi.gov.in/uploads/publications_reports/publications_reports1763618655097_29a4a622-fa4c-47e9-abba-b549e27a1bbb_NIC_2025.xlsx"
+      ],
+      "license": "Government source; original classifications retained with attribution",
+      "modifications": "XLSX classification codes and titles extracted to JSON; separate marketing categories are editorial mappings, not an official NIC classification."
+    }
+  ],
+  "completeness": {
+    "exhaustive": false,
+    "statement": "Includes all 1,666 revenue-village source rows, all 78 taluks and all 14 districts from the pinned LGD snapshot, augmented with available named OpenStreetMap place nodes. Informal localities, alternate spellings, recently changed names and unmapped places may be missing. It is not a complete register of every Kerala place or a verified list of categories operating in Kerala.",
+    "deduplication": "Same normalized settlement name within the same district is merged, retaining source references. Separate district and taluk records remain. Distinct settlements sharing a name inside one district can be merged; source IDs preserve provenance for later review.",
+    "districtAssignment": "Point-in-polygon against simplified district boundaries from the pinned LGD/Survey of India-derived bundle. Coastal and boundary points without a polygon match are excluded unless an explicit OSM district tag resolves them."
+  }
+}

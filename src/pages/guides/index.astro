@@ -1,0 +1,16 @@
+---
+import SiteLayout from '../../components/SiteLayout.astro';
+import { SITE, getStructuredData } from '../../lib/site.mjs';
+import { guides, guidePath } from '../../lib/guides.mjs';
+const title = 'Digital marketing guides for Kerala businesses | AdSquirrel';
+const description = 'Plain-language guides to Meta ads, Google Ads, SEO and agency costs in Kerala, with comparisons to help you choose where to spend.';
+const schema = getStructuredData({ path: '/guides/', title, description });
+schema['@graph'] = schema['@graph'].filter((item) => item['@type'] !== 'Service');
+schema['@graph'].push({ '@type': 'ItemList', itemListElement: guides.map((guide, index) => ({ '@type': 'ListItem', position: index + 1, url: `${SITE.url}${guidePath(guide)}`, name: guide.title })) });
+---
+<SiteLayout title={title} description={description} canonical={`${SITE.url}/guides/`} schema={schema}>
+  <main id="main" class="directory-page">
+    <div class="directory-intro"><p class="eyebrow">STRAIGHT ANSWERS</p><h1>Guides for<br /><em>Kerala businesses.</em></h1><p>What digital marketing really costs in Kerala, and how to choose between the options, explained without jargon.</p></div>
+    <div class="directory-grid">{guides.map((guide) => <a class="directory-card" href={guidePath(guide)}><span>{guide.title}</span><small>{guide.description}</small><span aria-hidden="true">↗</span></a>)}</div>
+  </main>
+</SiteLayout>

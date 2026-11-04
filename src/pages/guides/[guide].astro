@@ -1,0 +1,55 @@
+---
+import SiteLayout from '../../components/SiteLayout.astro';
+import Icon from '../../components/Icon.astro';
+import { SITE, getStructuredData } from '../../lib/site.mjs';
+import { guides, guidePath } from '../../lib/guides.mjs';
+import { servicesBySlug, servicePath } from '../../lib/services.mjs';
+export function getStaticPaths() {
+  return guides.map((guide) => ({ params: { guide: guide.slug }, props: { guide } }));
+}
+const { guide } = Astro.props;
+const path = guidePath(guide);
+const canonical = `${SITE.url}${path}`;
+const title = `${guide.title} | AdSquirrel guide`;
+const schema = getStructuredData({ path, title, description: guide.description });
+const organizationId = `${SITE.url}/#organization`;
+schema['@graph'] = schema['@graph'].filter((item) => item['@type'] !== 'Service');
+schema['@graph'].push(
+  { '@type': 'Article', '@id': `${canonical}#article`, headline: guide.title, description: guide.description, datePublished: guide.datePublished, dateModified: guide.dateModified, author: { '@id': organizationId }, publisher: { '@id': organizationId }, mainEntityOfPage: { '@id': `${canonical}#webpage` }, image: `${SITE.url}/og-image.png`, inLanguage: 'en-IN', about: guide.services.map((slug) => servicesBySlug.get(slug)?.name).filter(Boolean), spatialCoverage: { '@type': 'State', name: 'Kerala' } },
+  { '@type': 'FAQPage', mainEntity: guide.faqs.map(({ question, answer }) => ({ '@type': 'Question', name: question, acceptedAnswer: { '@type': 'Answer', text: answer } })) },
+  { '@type': 'BreadcrumbList', itemListElement: [{ name: 'Home', item: `${SITE.url}/` }, { name: 'Guides', item: `${SITE.url}/guides/` }, { name: guide.title, item: canonical }].map((crumb, index) => ({ '@type': 'ListItem', position: index + 1, ...crumb })) },
+);
+const related = guides.filter((item) => item.slug !== guide.slug).slice(0, 3);
+const formatDate = (date) => new Date(`${date}T00:00:00+05:30`).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Asia/Kolkata' });
+---
+<SiteLayout title={title} description={guide.description} canonical={canonical} schema={schema}>
+  <main id="main" class="prose-page guide-page">
+    <nav class="service-crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/guides/">Guides</a> / <span>{guide.title}</span></nav>
+    <article>
+      <p class="eyebrow">KERALA GUIDE</p>
+      <h1>{guide.title}</h1>
+      <p class="guide-meta">By the AdSquirrel team · Updated <time datetime={guide.dateModified}>{formatDate(guide.dateModified)}</time></p>
+      <div class="guide-answer"><strong>Short answer</strong><p>{guide.answer}</p></div>
+      {guide.sections.map((section) => (
+        <section>
+          <h2>{section.heading}</h2>
+          {section.paragraphs?.map((paragraph) => <p>{paragraph}</p>)}
+          {section.list && <ul>{section.list.map((item) => <li>{item}</li>)}</ul>}
+          {section.table && <div class="guide-table"><table><thead><tr>{section.table.head.map((cell) => <th scope="col">{cell}</th>)}</tr></thead><tbody>{section.table.rows.map((row) => <tr>{row.map((cell, index) => index === 0 ? <th scope="row">{cell}</th> : <td>{cell}</td>)}</tr>)}</tbody></table></div>}
+        </section>
+      ))}
+      <section>
+        <h2>Frequently asked questions</h2>
+        <div class="faq-items">{guide.faqs.map((faq) => <details name="faq"><summary>{faq.question}<span class="faq-plus">+</span></summary><p>{faq.answer}</p></details>)}</div>
+      </section>
+      <p class="guide-note">Figures marked as examples show the method only; they are not quotes or market rates. Platform rules change, so check current terms in Meta Ads Manager or Google Ads before you budget.</p>
+    </article>
+    <section class="guide-next">
+      <h2>Work with us</h2>
+      <div class="place-chips">{guide.services.map((slug) => servicesBySlug.get(slug)).filter(Boolean).map((service) => <a href={servicePath(service)}>{service.title} in Thrissur & Ernakulam<span>↗</span></a>)}<a href="/#contact">Ask for a tailored plan<span>↗</span></a></div>
+      <h2>More guides</h2>
+      <ul>{related.map((item) => <li><a href={guidePath(item)}>{item.title}</a></li>)}</ul>
+      <a class="inline-link" href="/guides/">All guides <Icon size={16} /></a>
+    </section>
+  </main>
+</SiteLayout>

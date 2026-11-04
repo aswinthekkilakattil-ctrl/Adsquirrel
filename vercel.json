@@ -1,8 +1,17 @@
 {
-  "rewrites": [
-    {
-      "source": "/((?!.*\\.).*)",
-      "destination": "/"
-    }
+  "buildCommand": "npm run build",
+  "framework": "astro",
+  "trailingSlash": true,
+  "redirects": [
+    { "source": "/advertising-company-kerala", "destination": "/", "permanent": true },
+    { "source": "/advertising-agency-kochi", "destination": "/locations/kochi/", "permanent": true }
+  ],
+  "headers": [
+    { "source": "/_astro/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
+    { "source": "/fonts/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
+    { "source": "/images/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=2592000, stale-while-revalidate=86400" }] },
+    { "source": "/(logo.png|og-image.png|og-image.svg|favicon.svg)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=604800" }] },
+    { "source": "/api/(.*)", "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }] },
+    { "source": "/(.*)", "headers": [{ "key": "X-Content-Type-Options", "value": "nosniff" }, { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }] }
   ]
 }

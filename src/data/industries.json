@@ -1,0 +1,1634 @@
+[
+  {
+    "name": "Restaurants",
+    "slug": "restaurants",
+    "description": "Turn menu discovery into table reservations and takeaway enquiries with local search, food photography and useful landing pages.",
+    "audience": "Diners comparing menus, cuisines, opening hours and nearby dining options.",
+    "intent": "Reservations, menu views and qualified takeaway enquiries.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "56",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Hotels",
+    "slug": "hotels",
+    "description": "Make rooms, amenities and location easy to compare, then connect search and social campaigns to direct booking enquiries.",
+    "audience": "Travellers evaluating room types, facilities, accessibility and travel dates.",
+    "intent": "Direct room enquiries and measurable booking journeys.",
+    "services": [
+      "Travel SEO",
+      "Visual storytelling",
+      "Direct booking campaigns",
+      "Conversion websites"
+    ],
+    "nicDivision": "55",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Healthcare",
+    "slug": "healthcare",
+    "description": "Help patients understand services, practitioner credentials and appointment options through clear, privacy-conscious content.",
+    "audience": "Patients and carers researching suitable local providers and available services.",
+    "intent": "Qualified appointment requests and accurate service discovery.",
+    "services": [
+      "Local SEO",
+      "Helpful service content",
+      "Appointment and enquiry journeys",
+      "Paid search"
+    ],
+    "nicDivision": "86",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Real estate",
+    "slug": "real-estate",
+    "description": "Bring project information, locality details and enquiry journeys together so buyers can assess a property before a site visit.",
+    "audience": "Homebuyers, commercial tenants and investors comparing properties.",
+    "intent": "Relevant property enquiries and scheduled site visits.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "68",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Education",
+    "slug": "education",
+    "description": "Explain courses, eligibility, teaching formats and admissions steps so prospective students can make an informed enquiry.",
+    "audience": "Students and parents comparing programmes, fees and admission requirements.",
+    "intent": "Qualified admissions enquiries and counselling appointments.",
+    "services": [
+      "Local SEO",
+      "Helpful service content",
+      "Appointment and enquiry journeys",
+      "Paid search"
+    ],
+    "nicDivision": "85",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Retail",
+    "slug": "retail",
+    "description": "Connect products, store information and seasonal offers across local search, social content and shopping campaigns.",
+    "audience": "Shoppers checking availability, comparing products and finding nearby stores.",
+    "intent": "Store enquiries, product discovery and attributable sales.",
+    "services": [
+      "Local SEO",
+      "Shopping campaigns",
+      "Social media content",
+      "Product page optimisation"
+    ],
+    "nicDivision": "47",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Dental clinics",
+    "slug": "dental-clinics",
+    "description": "Explain treatments, practitioner credentials and appointment preparation in accessible language without promising medical outcomes.",
+    "audience": "Patients comparing dental services, clinic facilities and appointment availability.",
+    "intent": "Relevant treatment enquiries and appointment requests.",
+    "services": [
+      "Local SEO",
+      "Helpful service content",
+      "Appointment and enquiry journeys",
+      "Paid search"
+    ],
+    "nicDivision": "86",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Ayurveda centres",
+    "slug": "ayurveda",
+    "description": "Present practitioner information, treatment programmes and consultation steps with careful, evidence-aware wellness content.",
+    "audience": "People researching qualified Ayurveda practitioners and wellness programmes.",
+    "intent": "Suitable consultation enquiries and programme information requests.",
+    "services": [
+      "Local SEO",
+      "Helpful service content",
+      "Appointment and enquiry journeys",
+      "Paid search"
+    ],
+    "nicDivision": "86",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Pharmacies",
+    "slug": "pharmacies",
+    "description": "Keep store details, opening hours and approved product information easy to find, with clear routes to availability enquiries.",
+    "audience": "Local customers looking for pharmacy opening hours and product availability.",
+    "intent": "Accurate local discovery and product availability enquiries.",
+    "services": [
+      "Local SEO",
+      "Shopping campaigns",
+      "Social media content",
+      "Product page optimisation"
+    ],
+    "nicDivision": "47",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Diagnostic laboratories",
+    "slug": "diagnostic-labs",
+    "description": "Make test preparation, collection options and appointment information easy to understand and find in search.",
+    "audience": "Patients comparing test availability, collection services and preparation instructions.",
+    "intent": "Test enquiries and collection appointment requests.",
+    "services": [
+      "Local SEO",
+      "Helpful service content",
+      "Appointment and enquiry journeys",
+      "Paid search"
+    ],
+    "nicDivision": "86",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Physiotherapy centres",
+    "slug": "physiotherapy",
+    "description": "Describe consultation processes, therapist qualifications and available rehabilitation services without guarantees of recovery.",
+    "audience": "Patients seeking qualified therapists and information about rehabilitation options.",
+    "intent": "Appropriate consultation and appointment requests.",
+    "services": [
+      "Local SEO",
+      "Helpful service content",
+      "Appointment and enquiry journeys",
+      "Paid search"
+    ],
+    "nicDivision": "86",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Veterinary clinics",
+    "slug": "veterinary-clinics",
+    "description": "Help pet owners find clinic hours, veterinarian credentials, available services and appointment information quickly.",
+    "audience": "Pet owners checking routine care, clinic services and opening hours.",
+    "intent": "Relevant veterinary appointment enquiries.",
+    "services": [
+      "Local SEO",
+      "Helpful service content",
+      "Appointment and enquiry journeys",
+      "Paid search"
+    ],
+    "nicDivision": "75",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Resorts",
+    "slug": "resorts",
+    "description": "Show accommodation, experiences and practical travel information through visual content and direct enquiry journeys.",
+    "audience": "Leisure travellers comparing stays, activities, facilities and packages.",
+    "intent": "Direct stay enquiries and package discovery.",
+    "services": [
+      "Travel SEO",
+      "Visual storytelling",
+      "Direct booking campaigns",
+      "Conversion websites"
+    ],
+    "nicDivision": "55",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Homestays",
+    "slug": "homestays",
+    "description": "Build trust with clear room details, host information, location guidance and straightforward booking enquiries.",
+    "audience": "Independent travellers seeking local stays and accurate accommodation information.",
+    "intent": "Direct accommodation enquiries and date availability requests.",
+    "services": [
+      "Travel SEO",
+      "Visual storytelling",
+      "Direct booking campaigns",
+      "Conversion websites"
+    ],
+    "nicDivision": "55",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Houseboat operators",
+    "slug": "houseboats",
+    "description": "Make boat types, routes, inclusions and booking terms easy to compare before guests enquire about their dates.",
+    "audience": "Travellers comparing backwater routes, cabin options and package inclusions.",
+    "intent": "Relevant cruise enquiries and availability requests.",
+    "services": [
+      "Travel SEO",
+      "Visual storytelling",
+      "Direct booking campaigns",
+      "Conversion websites"
+    ],
+    "nicDivision": "55",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Travel agencies",
+    "slug": "travel-agencies",
+    "description": "Organise destinations, package inclusions and travel support into useful pages that connect discovery to a consultation.",
+    "audience": "Travellers comparing itineraries, trip budgets and travel support.",
+    "intent": "Qualified itinerary and package enquiries.",
+    "services": [
+      "Travel SEO",
+      "Visual storytelling",
+      "Direct booking campaigns",
+      "Conversion websites"
+    ],
+    "nicDivision": "79",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Tour operators",
+    "slug": "tour-operators",
+    "description": "Turn itineraries, activity details and practical travel guidance into useful search content and enquiry paths.",
+    "audience": "Visitors comparing guided experiences, routes and departure options.",
+    "intent": "Relevant tour enquiries and itinerary requests.",
+    "services": [
+      "Travel SEO",
+      "Visual storytelling",
+      "Direct booking campaigns",
+      "Conversion websites"
+    ],
+    "nicDivision": "79",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Jewellery businesses",
+    "slug": "jewellery",
+    "description": "Present collections, craftsmanship and showroom information through strong imagery and clear product discovery.",
+    "audience": "Shoppers comparing jewellery collections, design styles and showroom availability.",
+    "intent": "Collection enquiries and showroom visit intent.",
+    "services": [
+      "Local SEO",
+      "Shopping campaigns",
+      "Social media content",
+      "Product page optimisation"
+    ],
+    "nicDivision": "47",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Fashion brands",
+    "slug": "fashion",
+    "description": "Connect distinctive collections and product stories with social content, shopping campaigns and accessible product pages.",
+    "audience": "Shoppers looking for clothing, occasion wear and product information.",
+    "intent": "Product discovery, store enquiries and online purchases.",
+    "services": [
+      "Local SEO",
+      "Shopping campaigns",
+      "Social media content",
+      "Product page optimisation"
+    ],
+    "nicDivision": "47",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Boutiques",
+    "slug": "boutiques",
+    "description": "Help shoppers discover distinctive collections, customisation options and appointment information through local and social channels.",
+    "audience": "Customers comparing occasion wear, tailoring options and boutique collections.",
+    "intent": "Collection enquiries and styling appointments.",
+    "services": [
+      "Local SEO",
+      "Shopping campaigns",
+      "Social media content",
+      "Product page optimisation"
+    ],
+    "nicDivision": "47",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Beauty salons",
+    "slug": "beauty-salons",
+    "description": "Make services, stylist information, appointment options and location details easy to compare on a phone.",
+    "audience": "Customers looking for beauty services, pricing information and available appointments.",
+    "intent": "Relevant service enquiries and appointment requests.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "96",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Spas",
+    "slug": "spas",
+    "description": "Explain treatments, facilities and booking options with calm visual storytelling and clear wellness information.",
+    "audience": "Customers comparing wellness services, facilities and appointment options.",
+    "intent": "Treatment enquiries and appointment requests.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "96",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Gyms",
+    "slug": "gyms",
+    "description": "Bring facilities, class schedules, trainer information and membership details into a clear local discovery journey.",
+    "audience": "People comparing nearby gyms, facilities, training options and memberships.",
+    "intent": "Trial enquiries and relevant membership leads.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "93",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Fitness coaches",
+    "slug": "fitness-coaches",
+    "description": "Clarify coaching formats, trainer credentials and programme expectations through helpful content and consultation pages.",
+    "audience": "People researching personal training, fitness programmes and coaching availability.",
+    "intent": "Qualified coaching consultations.",
+    "services": [
+      "Local SEO",
+      "Helpful service content",
+      "Appointment and enquiry journeys",
+      "Paid search"
+    ],
+    "nicDivision": "85",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Schools",
+    "slug": "schools",
+    "description": "Help parents compare curriculum, facilities, admissions information and school values through a useful mobile experience.",
+    "audience": "Parents researching suitable schools and admissions requirements.",
+    "intent": "Admissions information requests and campus visit enquiries.",
+    "services": [
+      "Local SEO",
+      "Helpful service content",
+      "Appointment and enquiry journeys",
+      "Paid search"
+    ],
+    "nicDivision": "85",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Colleges",
+    "slug": "colleges",
+    "description": "Structure course information, eligibility, campus facilities and admissions steps for students researching their next move.",
+    "audience": "Students comparing academic programmes, course formats and application processes.",
+    "intent": "Relevant admissions and course enquiries.",
+    "services": [
+      "Local SEO",
+      "Helpful service content",
+      "Appointment and enquiry journeys",
+      "Paid search"
+    ],
+    "nicDivision": "85",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Training institutes",
+    "slug": "training-institutes",
+    "description": "Explain course content, prerequisites and learning formats with useful course pages and search campaigns.",
+    "audience": "Learners comparing vocational skills, schedules and certification information.",
+    "intent": "Qualified course enquiries and counselling requests.",
+    "services": [
+      "Local SEO",
+      "Helpful service content",
+      "Appointment and enquiry journeys",
+      "Paid search"
+    ],
+    "nicDivision": "85",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "IELTS coaching centres",
+    "slug": "ielts-coaching",
+    "description": "Make class formats, trainer credentials, preparation resources and enrolment steps easy to assess without score guarantees.",
+    "audience": "Learners comparing English test preparation and coaching schedules.",
+    "intent": "Relevant batch enquiries and counselling bookings.",
+    "services": [
+      "Local SEO",
+      "Helpful service content",
+      "Appointment and enquiry journeys",
+      "Paid search"
+    ],
+    "nicDivision": "85",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Study abroad consultants",
+    "slug": "study-abroad",
+    "description": "Present destination guidance, eligibility information and counselling steps with clear distinctions between advice and admission decisions.",
+    "audience": "Students comparing international programmes and application support.",
+    "intent": "Qualified counselling appointments and destination enquiries.",
+    "services": [
+      "Local SEO",
+      "Helpful service content",
+      "Appointment and enquiry journeys",
+      "Paid search"
+    ],
+    "nicDivision": "85",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Edtech businesses",
+    "slug": "edtech",
+    "description": "Explain learning outcomes, product features and trial options through helpful content and measurable acquisition journeys.",
+    "audience": "Learners, parents and institutions evaluating digital learning products.",
+    "intent": "Qualified trials, demo requests and enrolment journeys.",
+    "services": [
+      "Local SEO",
+      "Helpful service content",
+      "Appointment and enquiry journeys",
+      "Paid search"
+    ],
+    "nicDivision": "85",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Furniture businesses",
+    "slug": "furniture",
+    "description": "Show dimensions, materials, styles and delivery information so customers can compare products before enquiring.",
+    "audience": "Shoppers furnishing homes and workplaces with specific space and budget needs.",
+    "intent": "Product enquiries and showroom visit intent.",
+    "services": [
+      "Local SEO",
+      "Shopping campaigns",
+      "Social media content",
+      "Product page optimisation"
+    ],
+    "nicDivision": "47",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Interior designers",
+    "slug": "interior-design",
+    "description": "Present project styles, design processes and consultation information through visual portfolios and relevant search pages.",
+    "audience": "Homeowners and business owners comparing interior styles and design support.",
+    "intent": "Qualified design consultations and project enquiries.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "74",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Architects",
+    "slug": "architecture",
+    "description": "Organise portfolios, practice expertise and project processes so prospective clients understand the fit before a consultation.",
+    "audience": "Property owners evaluating architectural practices and project experience.",
+    "intent": "Suitable project enquiries and design consultations.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "71",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Builders",
+    "slug": "builders",
+    "description": "Make project specifications, construction processes and enquiry steps clear for customers planning a building project.",
+    "audience": "Homeowners and developers comparing construction partners.",
+    "intent": "Qualified construction project enquiries.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "41",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Contractors",
+    "slug": "contractors",
+    "description": "Help clients assess available trades, service coverage and project requirements through practical service pages.",
+    "audience": "Property owners and project managers seeking suitable contracting services.",
+    "intent": "Relevant quotation requests and project discussions.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "43",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Solar businesses",
+    "slug": "solar",
+    "description": "Explain system options, installation steps and assessment requirements with transparent product and service content.",
+    "audience": "Households and businesses researching solar installations and system suitability.",
+    "intent": "Site assessment enquiries and qualified installation leads.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "43",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Electrical services",
+    "slug": "electrical-services",
+    "description": "Make service availability, job types and contact options easy to find for households and commercial customers.",
+    "audience": "Customers seeking electricians for repairs, installations and project work.",
+    "intent": "Relevant service calls and quotation requests.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "43",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Plumbing services",
+    "slug": "plumbing",
+    "description": "Explain supported work, service coverage and booking steps through practical local pages that are easy to use on a phone.",
+    "audience": "Households and businesses looking for plumbing repairs and installations.",
+    "intent": "Relevant plumbing enquiries and service requests.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "43",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Hardware stores",
+    "slug": "hardware-stores",
+    "description": "Organise product categories, store details and trade enquiries so buyers can find the materials they need.",
+    "audience": "Homeowners, tradespeople and contractors checking hardware supplies.",
+    "intent": "Product availability enquiries and trade customer leads.",
+    "services": [
+      "Local SEO",
+      "Shopping campaigns",
+      "Social media content",
+      "Product page optimisation"
+    ],
+    "nicDivision": "47",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Paint stores",
+    "slug": "paint-stores",
+    "description": "Connect colour choices, product ranges and store information with helpful content and local discovery.",
+    "audience": "Customers comparing paints, finishes and product availability.",
+    "intent": "Product enquiries and store visits.",
+    "services": [
+      "Local SEO",
+      "Shopping campaigns",
+      "Social media content",
+      "Product page optimisation"
+    ],
+    "nicDivision": "47",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Tiles and sanitaryware",
+    "slug": "tiles-sanitaryware",
+    "description": "Present materials, dimensions, styles and showroom collections to help buyers plan and compare confidently.",
+    "audience": "Homeowners and designers choosing finishes for construction and renovation.",
+    "intent": "Collection enquiries and showroom appointments.",
+    "services": [
+      "Local SEO",
+      "Shopping campaigns",
+      "Social media content",
+      "Product page optimisation"
+    ],
+    "nicDivision": "47",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Home appliance stores",
+    "slug": "home-appliances",
+    "description": "Make specifications, product comparisons and store availability easy to find across search and shopping journeys.",
+    "audience": "Shoppers comparing appliances, features and local availability.",
+    "intent": "Product enquiries and attributable appliance sales.",
+    "services": [
+      "Local SEO",
+      "Shopping campaigns",
+      "Social media content",
+      "Product page optimisation"
+    ],
+    "nicDivision": "47",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Electronics stores",
+    "slug": "electronics",
+    "description": "Connect accurate product information and availability with local discovery, shopping campaigns and product pages.",
+    "audience": "Customers researching electronics, technical specifications and store options.",
+    "intent": "Relevant product enquiries and purchases.",
+    "services": [
+      "Local SEO",
+      "Shopping campaigns",
+      "Social media content",
+      "Product page optimisation"
+    ],
+    "nicDivision": "47",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Mobile phone stores",
+    "slug": "mobile-stores",
+    "description": "Show devices, accessories, store information and service availability in a fast, mobile-friendly product experience.",
+    "audience": "Shoppers comparing mobile devices, accessories and nearby stores.",
+    "intent": "Device enquiries and store visit intent.",
+    "services": [
+      "Local SEO",
+      "Shopping campaigns",
+      "Social media content",
+      "Product page optimisation"
+    ],
+    "nicDivision": "47",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Ecommerce businesses",
+    "slug": "ecommerce",
+    "description": "Improve product discovery and checkout journeys with useful product information, search campaigns and conversion analysis.",
+    "audience": "Online shoppers comparing products, delivery information and purchase options.",
+    "intent": "Qualified traffic and measurable purchase journeys.",
+    "services": [
+      "Local SEO",
+      "Shopping campaigns",
+      "Social media content",
+      "Product page optimisation"
+    ],
+    "nicDivision": "47",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Supermarkets",
+    "slug": "supermarkets",
+    "description": "Keep store information, product categories and approved offers easy to discover through local search and social content.",
+    "audience": "Local shoppers checking store hours, product ranges and current offers.",
+    "intent": "Store discovery and relevant shopping enquiries.",
+    "services": [
+      "Local SEO",
+      "Shopping campaigns",
+      "Social media content",
+      "Product page optimisation"
+    ],
+    "nicDivision": "47",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Grocery stores",
+    "slug": "grocery-stores",
+    "description": "Help nearby customers find shop details, available product ranges and ordering options quickly.",
+    "audience": "Households checking groceries, store location and delivery availability.",
+    "intent": "Local customer discovery and order enquiries.",
+    "services": [
+      "Local SEO",
+      "Shopping campaigns",
+      "Social media content",
+      "Product page optimisation"
+    ],
+    "nicDivision": "47",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Bakeries",
+    "slug": "bakeries",
+    "description": "Show products, custom cake options and ordering details through appetising visuals and clear local search information.",
+    "audience": "Customers comparing baked products, celebration cakes and order options.",
+    "intent": "Product enquiries and custom cake orders.",
+    "services": [
+      "B2B SEO",
+      "Product and capability pages",
+      "Paid search",
+      "Enquiry conversion"
+    ],
+    "nicDivision": "10",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Cafes",
+    "slug": "cafes",
+    "description": "Bring the menu, atmosphere, opening hours and location together across local search and social discovery.",
+    "audience": "Customers looking for coffee, casual dining and places to meet.",
+    "intent": "Menu discovery and relevant visit enquiries.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "56",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Catering businesses",
+    "slug": "catering",
+    "description": "Explain menus, event formats, service coverage and enquiry requirements so customers can plan a suitable brief.",
+    "audience": "Families and event planners comparing catering options and menus.",
+    "intent": "Qualified catering quotation requests.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "56",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Cloud kitchens",
+    "slug": "cloud-kitchens",
+    "description": "Make cuisine, delivery coverage and ordering options easy to discover with useful menus and focused campaigns.",
+    "audience": "Customers comparing takeaway meals and delivery options.",
+    "intent": "Relevant order enquiries and delivery-area discovery.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "56",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Seafood businesses",
+    "slug": "seafood",
+    "description": "Present product ranges, handling information and supply capabilities clearly for consumer and trade enquiries.",
+    "audience": "Retail customers, restaurants and buyers evaluating seafood supply.",
+    "intent": "Relevant product and wholesale enquiries.",
+    "services": [
+      "B2B SEO",
+      "Product and capability pages",
+      "Paid search",
+      "Enquiry conversion"
+    ],
+    "nicDivision": "10",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Spice businesses",
+    "slug": "spices",
+    "description": "Connect product origins, packaging options and trade information with useful product pages and search discovery.",
+    "audience": "Consumers and trade buyers comparing spices, formats and supply options.",
+    "intent": "Product discovery and trade enquiries.",
+    "services": [
+      "B2B SEO",
+      "Product and capability pages",
+      "Paid search",
+      "Enquiry conversion"
+    ],
+    "nicDivision": "10",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Coir businesses",
+    "slug": "coir",
+    "description": "Show material specifications, applications and product ranges for buyers researching natural-fibre products.",
+    "audience": "Trade buyers comparing coir products and supplier capabilities.",
+    "intent": "Qualified product and wholesale enquiries.",
+    "services": [
+      "B2B SEO",
+      "Product and capability pages",
+      "Paid search",
+      "Enquiry conversion"
+    ],
+    "nicDivision": "13",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Handloom businesses",
+    "slug": "handloom",
+    "description": "Tell product and weaving stories with clear fabric information, collection imagery and accessible shopping journeys.",
+    "audience": "Shoppers and trade buyers looking for woven textiles and traditional collections.",
+    "intent": "Collection discovery and product enquiries.",
+    "services": [
+      "B2B SEO",
+      "Product and capability pages",
+      "Paid search",
+      "Enquiry conversion"
+    ],
+    "nicDivision": "13",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Agricultural businesses",
+    "slug": "agriculture",
+    "description": "Explain products, growing information and supply options through useful content for farmers and trade buyers.",
+    "audience": "Farmers, growers and buyers researching agricultural products and services.",
+    "intent": "Relevant product and trade enquiries.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "01",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Organic farms",
+    "slug": "organic-farms",
+    "description": "Present produce availability, farm practices and purchasing information with precise, supportable product claims.",
+    "audience": "Customers and buyers comparing farm produce and sourcing options.",
+    "intent": "Produce enquiries and supply discussions.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "01",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Plant nurseries",
+    "slug": "plant-nurseries",
+    "description": "Organise plant varieties, care information and store details to help customers choose suitable plants.",
+    "audience": "Gardeners and landscapers comparing plants and care requirements.",
+    "intent": "Plant availability enquiries and store discovery.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "01",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Dairy businesses",
+    "slug": "dairy",
+    "description": "Make product ranges, distribution details and supply information easy to evaluate for consumers and trade customers.",
+    "audience": "Households and trade buyers comparing dairy products and supply arrangements.",
+    "intent": "Product discovery and distribution enquiries.",
+    "services": [
+      "B2B SEO",
+      "Product and capability pages",
+      "Paid search",
+      "Enquiry conversion"
+    ],
+    "nicDivision": "10",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Food processing businesses",
+    "slug": "food-processing",
+    "description": "Explain products, packaging, production capabilities and buyer requirements through clear trade-oriented content.",
+    "audience": "Distributors and buyers evaluating processed food products and supply partners.",
+    "intent": "Qualified distribution and wholesale enquiries.",
+    "services": [
+      "B2B SEO",
+      "Product and capability pages",
+      "Paid search",
+      "Enquiry conversion"
+    ],
+    "nicDivision": "10",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Manufacturers",
+    "slug": "manufacturing",
+    "description": "Present production capabilities, specifications and enquiry requirements so industrial buyers can assess your fit.",
+    "audience": "Procurement teams evaluating manufacturing partners and technical capabilities.",
+    "intent": "Qualified B2B enquiries and specification requests.",
+    "services": [
+      "B2B SEO",
+      "Product and capability pages",
+      "Paid search",
+      "Enquiry conversion"
+    ],
+    "nicDivision": "25",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Rubber businesses",
+    "slug": "rubber",
+    "description": "Show material grades, product applications and supply information for buyers comparing rubber products.",
+    "audience": "Industrial buyers and distributors researching rubber materials and components.",
+    "intent": "Relevant product and supply enquiries.",
+    "services": [
+      "B2B SEO",
+      "Product and capability pages",
+      "Paid search",
+      "Enquiry conversion"
+    ],
+    "nicDivision": "22",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Plastics businesses",
+    "slug": "plastics",
+    "description": "Explain materials, product specifications and manufacturing capabilities through practical product and application pages.",
+    "audience": "Buyers comparing plastic products, components and production partners.",
+    "intent": "Qualified trade enquiries and product requests.",
+    "services": [
+      "B2B SEO",
+      "Product and capability pages",
+      "Paid search",
+      "Enquiry conversion"
+    ],
+    "nicDivision": "22",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Metal fabrication businesses",
+    "slug": "metal-fabrication",
+    "description": "Make fabrication capabilities, materials and project requirements clear for commercial and industrial customers.",
+    "audience": "Project teams seeking fabrication partners for specific materials and applications.",
+    "intent": "Relevant fabrication quotation requests.",
+    "services": [
+      "B2B SEO",
+      "Product and capability pages",
+      "Paid search",
+      "Enquiry conversion"
+    ],
+    "nicDivision": "25",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Machinery businesses",
+    "slug": "machinery",
+    "description": "Organise specifications, applications, support information and enquiry options to support considered equipment purchases.",
+    "audience": "Industrial buyers evaluating machinery and technical support options.",
+    "intent": "Qualified equipment and demonstration enquiries.",
+    "services": [
+      "B2B SEO",
+      "Product and capability pages",
+      "Paid search",
+      "Enquiry conversion"
+    ],
+    "nicDivision": "28",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Automotive businesses",
+    "slug": "automotive",
+    "description": "Connect vehicle or service information with local discovery and clear enquiry journeys for prospective customers.",
+    "audience": "Motorists comparing vehicles, products and automotive services.",
+    "intent": "Relevant automotive sales and service enquiries.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "45",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Car dealerships",
+    "slug": "car-dealerships",
+    "description": "Make model comparisons, dealership information and test-drive requests easy to navigate on a phone.",
+    "audience": "Vehicle buyers comparing models, features and dealership options.",
+    "intent": "Qualified model enquiries and test-drive requests.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "45",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Used car businesses",
+    "slug": "used-cars",
+    "description": "Present vehicle condition, specifications and viewing options clearly to support informed buyer enquiries.",
+    "audience": "Buyers comparing pre-owned vehicles and inspection information.",
+    "intent": "Relevant vehicle enquiries and viewing appointments.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "45",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Car rental businesses",
+    "slug": "car-rentals",
+    "description": "Explain vehicle options, rental terms and availability enquiries so travellers can assess the right fit.",
+    "audience": "Travellers and local customers comparing rental vehicles and booking terms.",
+    "intent": "Qualified rental and availability enquiries.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "77",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Car workshops",
+    "slug": "car-workshops",
+    "description": "Make service types, supported vehicles and booking information easy to discover through practical local content.",
+    "audience": "Motorists comparing workshops and vehicle maintenance services.",
+    "intent": "Relevant service enquiries and workshop bookings.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "45",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Bike dealerships",
+    "slug": "bike-dealerships",
+    "description": "Present models, dealership details and test-ride options with clear product information and local discovery.",
+    "audience": "Two-wheeler buyers comparing models and dealership availability.",
+    "intent": "Qualified model enquiries and test-ride requests.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "45",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Driving schools",
+    "slug": "driving-schools",
+    "description": "Explain training formats, scheduling and enrolment requirements so learners can compare their options.",
+    "audience": "Learner drivers looking for suitable instruction and lesson schedules.",
+    "intent": "Relevant lesson and enrolment enquiries.",
+    "services": [
+      "Local SEO",
+      "Helpful service content",
+      "Appointment and enquiry journeys",
+      "Paid search"
+    ],
+    "nicDivision": "85",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Logistics businesses",
+    "slug": "logistics",
+    "description": "Make routes, shipment types and service capabilities easy to assess through clear B2B service pages.",
+    "audience": "Businesses comparing freight, distribution and delivery partners.",
+    "intent": "Qualified logistics and shipment enquiries.",
+    "services": [
+      "B2B SEO",
+      "Product and capability pages",
+      "Paid search",
+      "Enquiry conversion"
+    ],
+    "nicDivision": "52",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Packers and movers",
+    "slug": "packers-movers",
+    "description": "Explain service coverage, packing options and quotation requirements for customers planning a move.",
+    "audience": "Households and businesses comparing relocation services.",
+    "intent": "Relevant moving quotation requests.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "49",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Warehousing businesses",
+    "slug": "warehousing",
+    "description": "Present storage capabilities, access information and service requirements for buyers assessing distribution space.",
+    "audience": "Businesses comparing storage and fulfilment options.",
+    "intent": "Qualified storage and fulfilment enquiries.",
+    "services": [
+      "B2B SEO",
+      "Product and capability pages",
+      "Paid search",
+      "Enquiry conversion"
+    ],
+    "nicDivision": "52",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Maritime businesses",
+    "slug": "maritime",
+    "description": "Explain vessel services, operating capabilities and enquiry requirements through precise sector-focused content.",
+    "audience": "Commercial buyers comparing maritime services and operating partners.",
+    "intent": "Relevant maritime and trade enquiries.",
+    "services": [
+      "B2B SEO",
+      "Product and capability pages",
+      "Paid search",
+      "Enquiry conversion"
+    ],
+    "nicDivision": "50",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Financial advisers",
+    "slug": "financial-advisors",
+    "description": "Explain qualifications, service scope and consultation processes with clear distinctions between education and personal advice.",
+    "audience": "People and businesses researching qualified financial advisory services.",
+    "intent": "Appropriate consultation enquiries.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "66",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Accounting firms",
+    "slug": "accounting",
+    "description": "Clarify service scope, engagement processes and business support options through useful search content.",
+    "audience": "Business owners comparing accounting and compliance support.",
+    "intent": "Qualified accounting consultation requests.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "69",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Insurance businesses",
+    "slug": "insurance",
+    "description": "Explain available assistance, policy information and enquiry steps with transparent terms and no unsupported coverage claims.",
+    "audience": "Customers comparing insurance options and qualified assistance.",
+    "intent": "Relevant policy information and consultation enquiries.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "66",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Legal practices",
+    "slug": "legal-services",
+    "description": "Organise practice areas, practitioner information and consultation details with careful attention to professional advertising rules.",
+    "audience": "Individuals and businesses researching appropriate legal assistance.",
+    "intent": "Relevant consultation enquiries within applicable professional rules.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "69",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Software businesses",
+    "slug": "software",
+    "description": "Translate technical capabilities into clear use cases, service pages and demo journeys for prospective buyers.",
+    "audience": "Businesses evaluating software delivery partners and technical solutions.",
+    "intent": "Qualified project enquiries and discovery calls.",
+    "services": [
+      "B2B content and AEO",
+      "Product positioning",
+      "Paid acquisition",
+      "Demo conversion"
+    ],
+    "nicDivision": "62",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "SaaS businesses",
+    "slug": "saas",
+    "description": "Connect product features and customer use cases to trials, demos and a clear path to evaluation.",
+    "audience": "Teams comparing software products and implementation requirements.",
+    "intent": "Qualified trials and product demonstrations.",
+    "services": [
+      "B2B content and AEO",
+      "Product positioning",
+      "Paid acquisition",
+      "Demo conversion"
+    ],
+    "nicDivision": "62",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Photography businesses",
+    "slug": "photography",
+    "description": "Show visual style, shoot formats and enquiry details through fast portfolios and relevant local search pages.",
+    "audience": "Customers comparing photographers for personal and commercial projects.",
+    "intent": "Suitable shoot enquiries and consultation requests.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "74",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Wedding businesses",
+    "slug": "wedding-services",
+    "description": "Help couples compare service styles, availability and planning options with useful portfolios and enquiry forms.",
+    "audience": "Couples and families planning wedding services and celebrations.",
+    "intent": "Qualified wedding service and availability enquiries.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "96",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Event management businesses",
+    "slug": "event-management",
+    "description": "Present event formats, planning capabilities and project requirements through clear portfolios and service information.",
+    "audience": "Organisations and families comparing event planning support.",
+    "intent": "Relevant event briefs and consultation enquiries.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "82",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Media production businesses",
+    "slug": "media-production",
+    "description": "Show production formats, creative capabilities and enquiry processes through focused portfolios and project pages.",
+    "audience": "Brands and organisations comparing video and media production partners.",
+    "intent": "Qualified production briefs and project enquiries.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "59",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Printing businesses",
+    "slug": "printing",
+    "description": "Make formats, materials and quotation requirements clear so buyers can quickly request the right print work.",
+    "audience": "Businesses and customers comparing print formats and production options.",
+    "intent": "Relevant print quotation requests.",
+    "services": [
+      "B2B SEO",
+      "Product and capability pages",
+      "Paid search",
+      "Enquiry conversion"
+    ],
+    "nicDivision": "18",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Packaging businesses",
+    "slug": "packaging",
+    "description": "Present material options, dimensions and production capabilities to support detailed B2B buying decisions.",
+    "audience": "Brands and distributors comparing packaging specifications and suppliers.",
+    "intent": "Qualified packaging and production enquiries.",
+    "services": [
+      "B2B SEO",
+      "Product and capability pages",
+      "Paid search",
+      "Enquiry conversion"
+    ],
+    "nicDivision": "17",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Recruitment businesses",
+    "slug": "recruitment",
+    "description": "Separate employer services and candidate information so each audience can find a useful next step.",
+    "audience": "Employers seeking recruitment support and candidates researching opportunities.",
+    "intent": "Relevant employer briefs and candidate enquiries.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "78",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Cleaning services",
+    "slug": "cleaning-services",
+    "description": "Explain cleaning formats, service coverage and quotation requirements for homes and commercial spaces.",
+    "audience": "Households and facilities teams comparing cleaning providers.",
+    "intent": "Qualified cleaning quotation requests.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "81",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Security services",
+    "slug": "security-services",
+    "description": "Present supported sites, service scope and engagement processes clearly for organisations comparing providers.",
+    "audience": "Businesses and property managers researching security support.",
+    "intent": "Relevant security service and quotation enquiries.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "80",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Laundry businesses",
+    "slug": "laundry",
+    "description": "Make service options, collection information and turnaround details easy to find for nearby customers.",
+    "audience": "Households and businesses comparing laundry and dry-cleaning options.",
+    "intent": "Relevant laundry enquiries and collection requests.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "96",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Pest control businesses",
+    "slug": "pest-control",
+    "description": "Explain assessment processes, service scope and preparation information with careful, supportable treatment claims.",
+    "audience": "Property owners and facilities teams comparing pest management services.",
+    "intent": "Appropriate assessment and service enquiries.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "81",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Waste management businesses",
+    "slug": "waste-management",
+    "description": "Explain accepted materials, collection scope and service processes for customers evaluating disposal options.",
+    "audience": "Businesses and properties looking for suitable waste collection and processing services.",
+    "intent": "Relevant collection and service enquiries.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "38",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Recycling businesses",
+    "slug": "recycling",
+    "description": "Make accepted materials, handling requirements and collection options clear for customers and trade partners.",
+    "audience": "Households and businesses researching material recycling options.",
+    "intent": "Relevant material and collection enquiries.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "38",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Nonprofit organisations",
+    "slug": "nonprofits",
+    "description": "Explain programmes, participation options and organisational information through accessible storytelling and useful search content.",
+    "audience": "Supporters, volunteers and communities researching programmes and participation.",
+    "intent": "Relevant programme enquiries and volunteer engagement.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "94",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Pet stores",
+    "slug": "pet-stores",
+    "description": "Help pet owners compare products, supplies and shop information through clear categories and local discovery.",
+    "audience": "Pet owners looking for suitable food, accessories and pet supplies.",
+    "intent": "Product availability enquiries and store discovery.",
+    "services": [
+      "Local SEO",
+      "Shopping campaigns",
+      "Social media content",
+      "Product page optimisation"
+    ],
+    "nicDivision": "47",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Sports businesses",
+    "slug": "sports-businesses",
+    "description": "Bring activities, facilities and participation information together so customers can find a suitable session or service.",
+    "audience": "Players and families comparing sports facilities and programmes.",
+    "intent": "Relevant participation and facility enquiries.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "93",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Coworking spaces",
+    "slug": "coworking",
+    "description": "Show workspace options, amenities and visit information with clear enquiry paths for teams and independent workers.",
+    "audience": "Professionals and teams comparing flexible workspaces.",
+    "intent": "Relevant workspace enquiries and tour requests.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "68",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Export businesses",
+    "slug": "exporters",
+    "description": "Explain product specifications, supply capabilities and trade enquiry requirements for international buyers.",
+    "audience": "Importers and trade partners comparing export products and suppliers.",
+    "intent": "Qualified international trade enquiries.",
+    "services": [
+      "B2B SEO",
+      "Product and capability pages",
+      "Paid search",
+      "Enquiry conversion"
+    ],
+    "nicDivision": "46",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Wholesale businesses",
+    "slug": "wholesalers",
+    "description": "Organise product ranges, ordering requirements and distribution information to help trade buyers assess suitability.",
+    "audience": "Retailers and commercial buyers comparing wholesale products and suppliers.",
+    "intent": "Relevant trade and distribution enquiries.",
+    "services": [
+      "B2B SEO",
+      "Product and capability pages",
+      "Paid search",
+      "Enquiry conversion"
+    ],
+    "nicDivision": "46",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  },
+  {
+    "name": "Repair services",
+    "slug": "repair-services",
+    "description": "Make supported products, assessment processes and service contact options easy to discover locally.",
+    "audience": "Customers looking for suitable repair support and assessment information.",
+    "intent": "Relevant repair enquiries and service requests.",
+    "services": [
+      "Local SEO",
+      "Search campaigns",
+      "Useful service content",
+      "Conversion websites"
+    ],
+    "nicDivision": "95",
+    "source": "https://mospi.gov.in/classification/national-industrial-classification",
+    "provenance": "Editorial marketing category mapped to a NIC 2008 division. Not a claim of official one-to-one classification or verified Kerala business presence."
+  }
+]

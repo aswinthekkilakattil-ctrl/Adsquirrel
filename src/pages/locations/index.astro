@@ -1,0 +1,42 @@
+---
+import SiteLayout from '../../components/SiteLayout.astro';
+import { places, districts } from '../../lib/catalog.mjs';
+import { SITE } from '../../lib/site.mjs';
+---
+<SiteLayout title="Digital marketing across Kerala | AdSquirrel locations" description="Explore AdSquirrel digital marketing services for Kerala cities, towns, villages and districts. Based in Kalamassery, serving businesses across Kerala." canonical={`${SITE.url}/locations/`}>
+  <main id="main" class="directory-page">
+    <div class="directory-intro"><p class="eyebrow">LOCAL UNDERSTANDING. WIDER POSSIBILITIES.</p><h1>Wherever you grow.<br /><em>We’re with you.</em></h1><p>Explore digital marketing for your part of Kerala. One team in Kalamassery, with a practical approach to businesses across the state.</p></div>
+    <section class="directory-search" aria-label="Search all locations"><label for="global-place-search">Find any listed place</label><input type="search" id="global-place-search" placeholder="Search cities, towns, villages and alternate names" autocomplete="off" /><p id="global-place-status" aria-live="polite">{places.length.toLocaleString('en-IN')} named places. Search by name, or choose a district below.</p><div id="global-place-results" class="directory-grid" hidden></div></section>
+    <div class="directory-grid">{districts.map((district) => <a class="directory-card" href={`/locations/district/${district.slug}/1/`}><span>{district.name}</span><small>{places.filter((place) => place.district === district.name && place.slug !== district.slug).length.toLocaleString('en-IN')} places</small><span aria-hidden="true">↗</span></a>)}</div>
+    <p class="directory-note">Names are collected from the sources documented in our <a href="/data-sources/">data notes</a>. A directory cannot guarantee every informal place name or spelling. These are service areas, not separate AdSquirrel offices.</p>
+  </main>
+</SiteLayout>
+<script>
+  type Place = { name: string; slug: string; district: string; aliases?: string[] };
+  const input = document.querySelector<HTMLInputElement>('#global-place-search');
+  const status = document.querySelector<HTMLElement>('#global-place-status');
+  const results = document.querySelector<HTMLElement>('#global-place-results');
+  let directory: Promise<Place[]> | undefined;
+  const getPlaces = () => directory ||= fetch('/api/catalog.json').then((response) => { if (!response.ok) throw new Error('Unavailable'); return response.json(); }).then((catalog) => catalog.places).catch((error) => { directory = undefined; throw error; });
+  input?.addEventListener('focus', () => { getPlaces().catch(() => {}); }, { once: true });
+  input?.addEventListener('input', async () => {
+    const query = input.value.trim().toLocaleLowerCase();
+    if (!results || !status) return;
+    if (query.length < 2) { results.replaceChildren(); results.hidden = true; status.textContent = 'Enter at least two characters, or choose a district below.'; return; }
+    try {
+      const entries = await getPlaces();
+      if (input.value.trim().toLocaleLowerCase() !== query) return;
+      const matches = entries.filter((place) => [place.name, place.district, ...(place.aliases || [])].some((name) => name.toLocaleLowerCase().includes(query)));
+      const fragment = document.createDocumentFragment();
+      for (const place of matches.slice(0, 48)) {
+        const link = document.createElement('a'); link.className = 'directory-card'; link.href = `/locations/${place.slug}/`;
+        const name = document.createElement('span'); name.textContent = place.name;
+        const district = document.createElement('small'); district.textContent = place.district;
+        const arrow = document.createElement('span'); arrow.textContent = '↗'; arrow.setAttribute('aria-hidden', 'true');
+        link.append(name, district, arrow); fragment.append(link);
+      }
+      results.replaceChildren(fragment); results.hidden = false;
+      status.textContent = matches.length > 48 ? `${matches.length.toLocaleString('en-IN')} matches; showing the first 48. Add more letters to narrow your search.` : `${matches.length} ${matches.length === 1 ? 'place' : 'places'} found.`;
+    } catch { status.textContent = 'Search could not load. Browse the district directories below, or try again.'; }
+  });
+</script>

@@ -1,0 +1,11 @@
+---
+import LandingPage from '../../../components/LandingPage.astro';
+import { places, placeIndexing } from '../../../lib/catalog.mjs';
+import { SITE } from '../../../lib/site.mjs';
+export function getStaticPaths() {
+  return places.map((place) => ({ params: { place: place.slug }, props: { place } }));
+}
+const { place } = Astro.props;
+const { noindex, canonicalPath } = placeIndexing(place);
+---
+<LandingPage place={place} noindex={noindex} canonical={canonicalPath && `${SITE.url}${canonicalPath}`} />

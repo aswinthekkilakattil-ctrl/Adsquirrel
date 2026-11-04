@@ -1,0 +1,30 @@
+---
+import SiteLayout from '../../../../components/SiteLayout.astro';
+import { places, districts } from '../../../../lib/catalog.mjs';
+import { SITE } from '../../../../lib/site.mjs';
+export function getStaticPaths() {
+  return districts.flatMap((district) => {
+    const entries = places.filter((place) => place.district === district.name && place.slug !== district.slug);
+    const pageCount = Math.max(1, Math.ceil(entries.length / 200));
+    return Array.from({ length: pageCount }, (_, index) => ({ params: { district: district.slug, page: String(index + 1) }, props: { district, entries: entries.slice(index * 200, (index + 1) * 200), page: index + 1, pageCount, total: entries.length } }));
+  });
+}
+const { district, entries, page, pageCount, total } = Astro.props;
+---
+<SiteLayout title={`Places in ${district.name} — page ${page} | AdSquirrel`} description={`Explore digital marketing services for ${total} places in ${district.name} district, Kerala. Place directory page ${page} of ${pageCount}.`} canonical={`${SITE.url}/locations/district/${district.slug}/${page}/`}>
+  <main id="main" class="directory-page">
+    <div class="directory-intro"><p class="eyebrow"><a href="/locations/">KERALA LOCATIONS</a> / {district.name.toUpperCase()}</p><h1>Grow in<br /><em>{district.name}.</em></h1><p>Find your locality, or explore our <a href={`/locations/${district.slug}/`}>digital marketing approach for {district.name}</a>.</p></div>
+    <form class="directory-search" role="search"><label for="place-search">Filter this page</label><input type="search" id="place-search" placeholder="Search the places on this page" autocomplete="off" /><p id="place-search-status" aria-live="polite">Page {page} of {pageCount} · {total.toLocaleString('en-IN')} places in this district</p></form>
+    <div class="directory-grid">{entries.map((place) => <a class="directory-card" data-place-name={`${place.name} ${(place.aliases || []).join(' ')}`.toLowerCase()} href={`/locations/${place.slug}/`}><span>{place.name}</span><small>{place.type}</small><span aria-hidden="true">↗</span></a>)}</div>
+    <nav class="directory-pagination" aria-label="Directory pages">{page > 1 && <a href={`/locations/district/${district.slug}/${page - 1}/`} rel="prev">← Previous</a>}<span>Page {page} of {pageCount}</span>{page < pageCount && <a href={`/locations/district/${district.slug}/${page + 1}/`} rel="next">Next →</a>}</nav>
+    <p class="directory-note">These are service areas, not additional offices. <a href="/data-sources/">Read about our place data.</a></p>
+  </main>
+</SiteLayout>
+<script>
+  const input = document.querySelector<HTMLInputElement>('#place-search');
+  input?.addEventListener('input', () => {
+    const query = input.value.trim().toLocaleLowerCase(); let count = 0;
+    document.querySelectorAll<HTMLElement>('[data-place-name]').forEach((card) => { const visible = Boolean(card.dataset.placeName?.includes(query)); card.hidden = !visible; if (visible) count++; });
+    const status = document.querySelector('#place-search-status'); if (status) status.textContent = `${count.toLocaleString('en-IN')} ${count === 1 ? 'place' : 'places'} found on this page.`;
+  });
+</script>

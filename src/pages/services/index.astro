@@ -1,0 +1,17 @@
+---
+import SiteLayout from '../../components/SiteLayout.astro';
+import { servicePlaces } from '../../lib/catalog.mjs';
+import { SITE, getStructuredData } from '../../lib/site.mjs';
+import { services, servicePath } from '../../lib/services.mjs';
+const title = 'Digital marketing services in Thrissur & Ernakulam | AdSquirrel';
+const description = 'Meta ads, Google Ads, social media marketing, SEO, branding, creative, video and websites for businesses across Thrissur and Ernakulam, from AdSquirrel in Kalamassery.';
+const mainTowns = ['thrissur', 'irinjalakuda', 'kodungallur-thrissur', 'guruvayur', 'chalakudy', 'kunnamkulam-thrissur', 'kochi', 'ernakulam-ernakulam', 'north-paravur'].map((slug) => servicePlaces.find((place) => place.slug === slug)).filter(Boolean);
+---
+<SiteLayout title={title} description={description} canonical={`${SITE.url}/services/`} schema={getStructuredData({ path: '/services/', title, description })}>
+  <main id="main" class="directory-page">
+    <div class="directory-intro"><p class="eyebrow">WHAT WE DO, WHERE YOU ARE</p><h1>Digital marketing services<br /><em>in Thrissur & Ernakulam.</em></h1><p>Choose a service to see what is included, how we work and the towns we serve, from Kochi and North Paravur to Thrissur, Irinjalakuda, Kodungallur, Guruvayur, Chalakudy and Kunnamkulam.</p></div>
+    <div class="directory-grid">{services.map((service) => <a class="directory-card" href={servicePath(service)}><span>{service.title}</span><small>{service.short}</small><span aria-hidden="true">↗</span></a>)}</div>
+    {mainTowns.map((place) => <section class="service-town"><h2>{place.name}</h2><div class="place-chips">{services.map((service) => <a href={servicePath(service, place)}>{service.title}<span>↗</span></a>)}</div></section>)}
+    <p class="directory-note">Our office is in Kalamassery. Listed towns are service areas, not separate AdSquirrel offices. See all <a href="/locations/">locations</a>.</p>
+  </main>
+</SiteLayout>

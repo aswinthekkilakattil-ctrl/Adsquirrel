@@ -1,0 +1,55 @@
+---
+import Seo from './Seo.astro';
+import Icon from './Icon.astro';
+import { SITE, getPageMeta, getStructuredData } from '../lib/site.mjs';
+import '../styles/global.css';
+const { place, industry, noindex = false } = Astro.props;
+const meta = getPageMeta({ place, industry, path: Astro.url.pathname });
+const title = Astro.props.title || meta.title;
+const description = Astro.props.description || meta.description;
+const canonical = Astro.props.canonical || meta.canonical;
+const schema = Astro.props.schema || getStructuredData({ place, industry, path: Astro.url.pathname, title, description });
+// The place this page is about, as shown in the hero; remembered for the visit so the home page can reuse it.
+const heroPlace = Astro.props.heroPlace ?? (place ? (place.type === 'district' ? `${place.name} district` : place.name) : '');
+const analyticsId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
+const searchConsoleToken = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
+---
+<!doctype html>
+<html lang="en-IN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f8f7f3" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preload" href="/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <Seo {title} {description} {canonical} {schema} {noindex} />
+    {searchConsoleToken && <meta name="google-site-verification" content={searchConsoleToken} />}
+    {analyticsId && <script is:inline define:vars={{ analyticsId }}>
+      // GA4 loads after the page has finished loading and the browser is idle, so it never competes with page content.
+      window.dataLayer = window.dataLayer || []; window.gtag = function () { dataLayer.push(arguments); };
+      gtag('js', new Date()); gtag('config', analyticsId);
+      addEventListener('load', () => (window.requestIdleCallback || setTimeout)(() => { const s = document.createElement('script'); s.async = true; s.src = `https://www.googletagmanager.com/gtag/js?id=${analyticsId}`; document.head.append(s); }));
+    </script>}
+  </head>
+  <body id="top" data-place={place?.slug || ''} data-industry={industry?.slug || ''} data-hero-place={heroPlace}>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a href="/" class="wordmark" aria-label="AdSquirrel home">
+        <svg viewBox="0 0 36 36" width="33" height="33" fill="none" aria-hidden="true"><path d="M18 30c-6 0-10-4-10-9 0-4 3-7 7-7h3c5 0 8-2 8-5 0-2-2-4-4-4s-4 2-4 4" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path d="m12 16-2-7 8 5M16 26h12l-5-5-7 1" fill="currentColor"/><circle cx="14" cy="19" r="1.1" fill="#f8f7f3"/></svg>
+        <span>ad<span class="wordmark-light">squirrel</span><span class="brand-dot">.</span></span>
+      </a>
+      <nav id="main-navigation" aria-label="Main navigation">
+        <a href="/services/">What we do</a><a href="/industries/">Who we help</a><a href="/locations/">Where we work</a><a href="/guides/">Guides</a><a href="/about/">About</a>
+      </nav>
+      <a class="header-cta" href={Astro.url.pathname.startsWith('/locations/') && place || Astro.url.pathname.startsWith('/industries/') && industry || /^\/services\/.+|^\/about\/$/.test(Astro.url.pathname) || Astro.url.pathname === '/' ? '#contact' : '/#contact'}>Let’s talk <Icon size={17} /></a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-navigation"><span></span><span></span></button>
+    </header>
+    <slot />
+    <footer class="site-footer">
+      <div class="footer-top"><a href="/" class="wordmark">adsquirrel<span class="brand-dot">.</span></a><p>Big ideas. Local understanding.<br />A little squirrel energy.</p><a class="back-top" href="#top">Back to top ↑</a></div>
+      <div class="footer-columns"><div><span class="eyebrow">FIND US</span><address>1st Floor, Kinfra Hi-Tech Park,<br />Kalamassery, Kerala – 683503</address><a href="https://www.google.com/maps/search/?api=1&query=Kinfra+Hi-Tech+Park+Kalamassery+Kerala+683503" target="_blank" rel="noopener noreferrer">Get directions ↗</a></div><div><span class="eyebrow">SAY HELLO</span><a href={`mailto:${SITE.email}`}>{SITE.email}</a><a href="tel:+919846730362">+91 98467 30362</a><a href="https://www.instagram.com/ad.squirrel" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div><div><span class="eyebrow">EXPLORE</span><a href="/about/">About us</a><a href="/services/">Our services</a><a href="/guides/">Guides</a><a href="/locations/">Across Kerala</a><a href="/industries/">Your industry</a><a href="/#faq">A few answers</a><a href="/privacy/">Privacy policy</a></div><div class="footer-note"><span class="local-dot"></span><p>Based in Kalamassery.<br />Thinking beyond boundaries.</p><span class="malayalam" lang="ml">നമസ്കാരം.</span></div></div>
+      <div class="footer-bottom"><span>© {new Date().getFullYear()} AdSquirrel · Nexston Corporations Pvt Ltd</span><span>Made for people. Built to be found.</span></div>
+    </footer>
+    <script src="../scripts/site.ts"></script>
+  </body>
+</html>

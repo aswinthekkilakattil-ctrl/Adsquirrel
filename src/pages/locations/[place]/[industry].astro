@@ -1,0 +1,9 @@
+---
+import LandingPage from '../../../components/LandingPage.astro';
+import { combinations } from '../../../lib/catalog.mjs';
+export function getStaticPaths() {
+  return combinations.map(({ place, industry }) => ({ params: { place: place.slug, industry: industry.slug }, props: { place, industry } }));
+}
+const { place, industry } = Astro.props;
+---
+<LandingPage place={place} industry={industry} />

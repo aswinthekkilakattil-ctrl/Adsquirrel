@@ -1,0 +1,31 @@
+/* Copy and illustration have their own columns, including for long place names. */
+.hero.hero--flow {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(36px, 5vw, 80px);
+  width: min(1488px, 100%);
+  min-height: 660px;
+  margin: 0 auto;
+  padding: 72px 56px 76px;
+}
+.hero--flow .hero-copy { min-width: 0; }
+.hero--flow h1 { max-width: 780px; overflow-wrap: anywhere; }
+.hero--flow .hero-description { max-width: 425px; }
+@media (min-width: 1600px) {
+  .hero.hero--flow { min-height: 730px; padding-block: 96px; }
+}
+@media (max-width: 1150px) {
+  .hero.hero--flow { min-height: 580px; gap: 32px; padding: 64px 36px 70px; }
+  .hero--flow h1 { font-size: clamp(45px, 5.15vw, 78px); letter-spacing: -3px; }
+}
+@media (max-width: 1000px) {
+  .hero.hero--flow { grid-template-columns: minmax(0, 1fr); gap: 44px; }
+  .hero--flow .hero-copy { width: 100%; max-width: 680px; }
+}
+@media (max-width: 600px) {
+  .hero.hero--flow { min-height: 0; gap: 44px; padding: 42px 20px 44px; }
+  .hero--flow h1 { font-size: clamp(43px, 10.5vw, 62px); }
+  .hero--flow .hero-description { max-width: 390px; }
+}

@@ -1,0 +1,61 @@
+---
+import SiteLayout from '../components/SiteLayout.astro';
+import Icon from '../components/Icon.astro';
+import ContactSection from '../components/ContactSection.astro';
+import { SITE, services as capabilities, getStructuredData } from '../lib/site.mjs';
+import { services, servicePath } from '../lib/services.mjs';
+import { guides, guidePath } from '../lib/guides.mjs';
+const title = 'About AdSquirrel — Digital marketing team at Kerala Startup Mission, Kalamassery';
+const description = 'AdSquirrel is a digital marketing team working from the Kerala Startup Mission campus at Kinfra Hi-Tech Park, Kalamassery, serving businesses across Kerala with SEO, ads, social media, branding, websites and video.';
+const canonical = `${SITE.url}/about/`;
+const schema = getStructuredData({ path: '/about/', title, description });
+schema['@graph'] = schema['@graph'].filter((item) => item['@type'] !== 'Service').map((item) => item['@type'] === 'WebPage' ? { ...item, '@type': 'AboutPage', mainEntity: { '@id': `${SITE.url}/#organization` } } : item);
+schema['@graph'].push({ '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE.url}/` }, { '@type': 'ListItem', position: 2, name: 'About', item: canonical }] });
+const facts = [
+  ['Who we are', 'A digital marketing team operated by Nexston Corporations Pvt Ltd'],
+  ['Where we work', `${SITE.workspace}, Kerala – 683503`],
+  ['Who we serve', 'Businesses across Kerala, with a focus on Ernakulam and Thrissur districts'],
+  ['Languages', SITE.languages.join(' and ')],
+  ['What we do', 'SEO and AEO, Meta ads, Google Ads, social media, branding, websites and video'],
+  ...(SITE.foundingDate ? [['Founded', SITE.foundingDate]] : []),
+  ['Contact', `${SITE.email} · ${SITE.phone}`],
+];
+---
+<SiteLayout title={title} description={description} canonical={canonical} schema={schema}>
+  <main id="main">
+    <div class="directory-page service-intro">
+      <div class="directory-intro">
+        <p class="eyebrow">ABOUT ADSQUIRREL</p>
+        <h1>A digital marketing team<br /><em>built in Kerala.</em></h1>
+        <p>AdSquirrel is a digital marketing team working from the Kerala Startup Mission campus at Kinfra Hi-Tech Park, Kalamassery. We help Kerala businesses get found on Google and in AI answers, run Meta and Google ads that bring real enquiries, and build brands, websites and content people remember.</p>
+        <p>We sit in one of Kerala’s busiest startup ecosystems, so new platforms, tools and ideas reach us early. We bring that thinking to neighbourhood shops, clinics, schools, builders and growing brands across the state.</p>
+      </div>
+    </div>
+    <section class="place-context section-shell">
+      <div>
+        <span class="eyebrow">AT A GLANCE</span>
+        <h2>The <span class="serif-word">facts.</span></h2>
+        <div class="guide-table"><table><tbody>{facts.map(([label, value]) => <tr><th scope="row">{label}</th><td>{value}</td></tr>)}</tbody></table></div>
+      </div>
+      <div class="place-brief">
+        <span class="eyebrow">HOW WE WORK</span>
+        <ol>
+          <li><strong>Listen before we recommend.</strong> We start with your customers, your offer and your numbers, not with a channel we want to sell.</li>
+          <li><strong>Measure enquiries, not vanity metrics.</strong> Calls, WhatsApp messages and form submissions are tracked back to the campaign that produced them.</li>
+          <li><strong>Speak your customers’ language.</strong> Copy, captions and videos in English, Malayalam or both.</li>
+          <li><strong>Keep you in control.</strong> Your ad accounts, pages, domain and files stay in your name.</li>
+          <li><strong>Be honest about outcomes.</strong> No one controls Google rankings or AI answers, so we never promise them. We commit to the work and report the results.</li>
+        </ol>
+      </div>
+    </section>
+    {SITE.founders.length > 0 && <section class="place-context section-shell"><div><span class="eyebrow">THE PEOPLE</span><h2>Who you will <span class="serif-word">work with.</span></h2></div><div class="place-chips">{SITE.founders.map((person) => <span class="directory-card"><span>{person.name}</span><small>{person.role}</small></span>)}</div></section>}
+    <section class="section-shell service-section">
+      <div class="context-panel"><span class="eyebrow">WHAT WE DO</span><h3>One team for search, ads, content and brand</h3><ul>{capabilities.map((item) => <li><Icon name="check" size={16} />{item.name}</li>)}</ul><div class="place-chips">{services.map((service) => <a href={servicePath(service)}>{service.title}<span>↗</span></a>)}</div></div>
+    </section>
+    <section class="place-context section-shell">
+      <div><span class="eyebrow">WHERE WE WORK</span><h3>Across Kerala, closest to Kochi and Thrissur</h3><p>Our team is based in Kalamassery, between Kochi city and Aluva. We meet clients across Ernakulam and Thrissur districts in person and work with businesses elsewhere in Kerala through calls, WhatsApp and planned visits. Location pages on this site describe service areas, not branch offices.</p><a class="inline-link" href="/locations/">Explore locations <Icon size={16} /></a></div>
+      <div><span class="eyebrow">WHAT WE SHARE</span><h3>Guides from the team</h3><ul class="service-list">{guides.map((guide) => <li><Icon name="check" size={16} /><a href={guidePath(guide)}>{guide.title}</a></li>)}</ul></div>
+    </section>
+    <ContactSection />
+  </main>
+</SiteLayout>

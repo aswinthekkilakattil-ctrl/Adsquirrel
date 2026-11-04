@@ -1,0 +1,20 @@
+---
+import SiteLayout from '../../components/SiteLayout.astro';
+import { industries } from '../../lib/catalog.mjs';
+import { SITE } from '../../lib/site.mjs';
+---
+<SiteLayout title="Digital marketing for your industry | AdSquirrel" description="Explore digital marketing strategies for Kerala business categories, with relevant audiences, channels and services." canonical={`${SITE.url}/industries/`}>
+  <main id="main" class="directory-page">
+    <div class="directory-intro"><p class="eyebrow">YOUR BUSINESS. YOUR NEXT CHAPTER.</p><h1>A little less generic.<br /><em>A lot more you.</em></h1><p>Different businesses grow in different ways. Explore a marketing approach shaped around your customers, your offer and your industry.</p></div>
+    <form class="directory-search" role="search"><label for="industry-search">Find your industry</label><input type="search" id="industry-search" placeholder="Try restaurants, healthcare or education" /><p id="industry-search-status" aria-live="polite">{industries.length} business categories.</p></form>
+    <div class="directory-grid industry-directory">{industries.map((industry) => <a class="directory-card" data-industry-name={`${industry.name} ${industry.description}`.toLowerCase()} href={`/industries/${industry.slug}/`}><span>{industry.name}</span><p>{industry.description}</p><span aria-hidden="true">↗</span></a>)}</div>
+  </main>
+</SiteLayout>
+<script>
+  const input = document.querySelector<HTMLInputElement>('#industry-search');
+  input?.addEventListener('input', () => {
+    const query = input.value.trim().toLowerCase(); let count = 0;
+    document.querySelectorAll<HTMLElement>('[data-industry-name]').forEach((card) => { const visible = Boolean(card.dataset.industryName?.includes(query)); card.hidden = !visible; if (visible) count++; });
+    const status = document.querySelector('#industry-search-status'); if (status) status.textContent = `${count} business ${count === 1 ? 'category' : 'categories'} found.`;
+  });
+</script>

@@ -1,0 +1,9 @@
+---
+import LandingPage from '../../components/LandingPage.astro';
+import { industries } from '../../lib/catalog.mjs';
+export function getStaticPaths() {
+  return industries.map((industry) => ({ params: { industry: industry.slug }, props: { industry } }));
+}
+const { industry } = Astro.props;
+---
+<LandingPage industry={industry} />
