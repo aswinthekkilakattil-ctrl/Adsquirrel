@@ -3,7 +3,6 @@ import { localNotes } from './local.mjs';
 const configuredOrigin = import.meta.env?.SITE_URL || process.env.SITE_URL || 'https://www.adsquirrel.in';
 export const SITE = {
   name: 'AdSquirrel',
-  legalName: 'Nexston Corporations Pvt Ltd',
   url: configuredOrigin.replace(/\/$/, ''),
   email: 'support@nexston.in',
   phone: '+91 9846730362',
@@ -51,7 +50,7 @@ export function getPageMeta({ place, industry, path } = {}) {
   const localDescription = place && !industry ? localNotes[place.slug]?.description : undefined;
   const description = localDescription || (industry
     ?`${industry.description} AdSquirrel supports ${industry.name.toLowerCase()} businesses${place ? ` in ${place.name}` : ' across Kerala'} with SEO, paid advertising, content and websites.`
-    : `Digital marketing for businesses in ${place?.name || 'Kerala'}. Discover SEO, AEO, performance marketing, branding and websites from AdSquirrel, based in Kalamassery.`);
+    : `Digital marketing for businesses in ${place?.name || 'Kerala'}. Discover SEO, AEO, performance marketing, branding and websites from AdSquirrel.`);
   return { title, description, canonical: `${SITE.url}${path || pagePath({ place, industry })}` };
 }
 
@@ -70,14 +69,13 @@ export function getFaqs({ place, industry } = {}) {
 
 export function getOrganization() {
   const organization = {
-    '@type': 'ProfessionalService', '@id': `${SITE.url}/#organization`, name: SITE.name, legalName: SITE.legalName, alternateName: ['Ad Squirrel', 'AdSquirrel Digital Marketing'],
+    '@type': 'ProfessionalService', '@id': `${SITE.url}/#organization`, name: SITE.name, alternateName: ['Ad Squirrel', 'AdSquirrel Digital Marketing'],
     description: 'AdSquirrel is a digital marketing team working from the Kerala Startup Mission campus at Kinfra Hi-Tech Park, Kalamassery, providing SEO, answer engine optimisation, Meta ads, Google Ads, social media, branding, websites and video for businesses across Kerala.',
     url: `${SITE.url}/`, logo: { '@type': 'ImageObject', '@id': `${SITE.url}/#logo`, url: `${SITE.url}/logo.png`, width: 512, height: 512 }, image: `${SITE.url}/og-image.png`,
     email: SITE.email, telephone: SITE.phone, hasMap: SITE.map, sameAs: [SITE.instagram, ...SITE.profiles],
     address: { '@type': 'PostalAddress', streetAddress: '1st Floor, Kinfra Hi-Tech Park', addressLocality: 'Kalamassery', addressRegion: 'Kerala', postalCode: '683503', addressCountry: 'IN' },
     geo: { '@type': 'GeoCoordinates', ...SITE.geo },
     areaServed: [{ '@type': 'State', name: 'Kerala' }, { '@type': 'AdministrativeArea', name: 'Ernakulam district' }, { '@type': 'AdministrativeArea', name: 'Thrissur district' }],
-    parentOrganization: { '@type': 'Organization', name: SITE.legalName },
     contactPoint: { '@type': 'ContactPoint', contactType: 'sales', telephone: SITE.phone, email: SITE.email, areaServed: 'IN', availableLanguage: SITE.languages },
     knowsLanguage: SITE.languages,
     knowsAbout: ['Search engine optimization', 'Answer engine optimization', 'Local SEO', 'Google Ads', 'Meta ads', 'Facebook advertising', 'Instagram marketing', 'Social media marketing', 'Branding', 'Website design', 'Video production', 'Conversion tracking'],

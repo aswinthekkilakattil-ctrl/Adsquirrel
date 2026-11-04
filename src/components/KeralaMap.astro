@@ -1,0 +1,24 @@
+---
+import map from '../data/kerala-map.json';
+---
+
+<div class="kerala-graphic">
+  <div class="map-brand"><img src="/icon-192.png" alt="" width="28" height="28" loading="lazy" /><span>ad<span class="map-brand-light">squirrel</span><span class="map-brand-dot">.</span></span></div>
+  <svg viewBox={map.viewBox} role="img" aria-label="Map of Kerala with its fourteen district headquarters marked by green dots">
+    <path d={map.outline} fill="#7f786d" fill-rule="evenodd" />
+    <g fill="#b4e65b">
+      {map.capitals.map(capital => <circle cx={capital.x} cy={capital.y} r="3.6" />)}
+    </g>
+  </svg>
+</div>
+
+<style>
+  .map-brand { position: absolute; bottom: 18px; left: 20px; display: flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 800; letter-spacing: -1px; line-height: 1; color: #1f1d1a; }
+  .map-brand img { width: 28px; height: 28px; display: block; }
+  .map-brand-light { font-weight: 500; }
+  .map-brand-dot { color: var(--purple); }
+  .kerala-graphic > svg { width: auto; max-width: calc(100% - 40px); height: 368px; margin-block: 26px; transform: none; }
+  @media (max-width: 600px) {
+    .kerala-graphic > svg { height: 288px; margin-block: 20px; }
+  }
+</style>
